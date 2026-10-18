@@ -1,0 +1,1059 @@
+{
+  "specification_section": "Section 14 External MEVA (CC BY 4.0) Sample",
+  "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "attribution": "\"Multiview Extended Video with Activities\" (MEVA) dataset by Kitware Inc. and the Intelligence Advanced Research Projects Activity (IARPA), licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0, http://creativecommons.org/licenses/by/4.0/, https://mevadata.org/resources/MEVA-data-license.txt).",
+  "counts_summary": {
+    "total_episodes": 12,
+    "unique_source_recordings": 7,
+    "unique_cameras": 7,
+    "unique_independent_scenarios": 4,
+    "source_recordings_list": [
+      "2018-03-05.13-15-00.13-20-00.school.G423.r13.avi",
+      "2018-03-05.13-15-00.13-20-00.school.G424.r13.avi",
+      "2018-03-05.13-15-01.13-20-01.school.G328.r13.avi",
+      "2018-03-05.13-20-00.13-25-00.school.G336.r13.avi",
+      "2018-03-05.14-00-00.14-05-00.school.G420.r13.avi",
+      "2018-03-05.14-10-00.14-15-00.school.G330.r13.avi",
+      "2018-03-05.14-10-00.14-15-00.school.G421.r13.avi"
+    ],
+    "cameras_list": [
+      "G328",
+      "G330",
+      "G336",
+      "G420",
+      "G421",
+      "G423",
+      "G424"
+    ],
+    "scenario_groups_list": [
+      "meva_scenario_20180305_1315",
+      "meva_scenario_20180305_1320",
+      "meva_scenario_20180305_1400",
+      "meva_scenario_20180305_1410"
+    ]
+  },
+  "episodes": [
+    {
+      "episode_id": "meva_ep01_G423_enter_exit",
+      "clip_filename": "meva_ep01_G423_enter_exit.mp4",
+      "clip_path": "evaluation/meva_sample/clips/meva_ep01_G423_enter_exit.mp4",
+      "sha256": "7d08aff64272035fa819fc64bd90a2ff21fe9fba27869ffee6060a8abb056e9c",
+      "source_video_id": "2018-03-05.13-15-00.13-20-00.school.G423.r13.avi",
+      "source_s3_url": "https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/13/2018-03-05.13-15-00.13-20-00.school.G423.r13.avi",
+      "official_kpf_annotation_url": "https://gitlab.kitware.com/meva/meva-data-repo/-/raw/master/annotation/DIVA-phase-2/MEVA/kitware/2018-03-05/13/2018-03-05.13-15-00.13-20-00.school.G423.activities.yml",
+      "local_annotation_path": "evaluation/meva_sample/annotations/2018-03-05.13-15-00.13-20-00.school.G423.activities.yml",
+      "annotation_sha256": "970bfd5e189f88fa911dd04545bea6b6e0b8648edd189bf9f1f3cf327621b4c2",
+      "camera_id": "G423",
+      "facility": "school",
+      "scenario_group_id": "meva_scenario_20180305_1315",
+      "reference_system": "PTS seconds normalized to clip start (with explicit clip_offset_sec from source stream)",
+      "clip_offset_sec": 31.0,
+      "requested_duration_sec": 11.0,
+      "ffmpeg_extraction_command": "/opt/homebrew/bin/ffmpeg -y -ss 31.0 -i https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/13/2018-03-05.13-15-00.13-20-00.school.G423.r13.avi -t 11.0 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -an evaluation/meva_sample/clips/meva_ep01_G423_enter_exit.mp4",
+      "probed_clip_metadata": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1072,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_time": 0.0,
+        "duration": 11.0,
+        "nb_frames": 330,
+        "size_bytes": 3556552
+      },
+      "official_activities": [
+        {
+          "activity": "person_enters_scene_through_structure",
+          "kpf_id2": 0,
+          "actor_ids": [
+            1
+          ],
+          "tsr0_frames": [
+            993,
+            1029
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            33.1,
+            34.3
+          ],
+          "clip_pts_time_range_sec": [
+            2.1,
+            3.3
+          ],
+          "clip_midpoint_sec": 2.7
+        },
+        {
+          "activity": "person_exits_scene_through_structure",
+          "kpf_id2": 1,
+          "actor_ids": [
+            2
+          ],
+          "tsr0_frames": [
+            1175,
+            1209
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            39.17,
+            40.3
+          ],
+          "clip_pts_time_range_sec": [
+            8.17,
+            9.3
+          ],
+          "clip_midpoint_sec": 8.73
+        }
+      ],
+      "manual_verification_status": "verified_against_kpf_yaml_and_clip_pts",
+      "license": "CC BY 4.0",
+      "attribution": "\"Multiview Extended Video with Activities\" (MEVA) dataset by Kitware Inc. and the Intelligence Advanced Research Projects Activity (IARPA), licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0, http://creativecommons.org/licenses/by/4.0/, https://mevadata.org/resources/MEVA-data-license.txt)."
+    },
+    {
+      "episode_id": "meva_ep02_G328_open_door_enter",
+      "clip_filename": "meva_ep02_G328_open_door_enter.mp4",
+      "clip_path": "evaluation/meva_sample/clips/meva_ep02_G328_open_door_enter.mp4",
+      "sha256": "2ee49aaae912cee2fff6319e42e86146e9acd20cc3f9257168d8fc375bc3c120",
+      "source_video_id": "2018-03-05.13-15-01.13-20-01.school.G328.r13.avi",
+      "source_s3_url": "https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/13/2018-03-05.13-15-01.13-20-01.school.G328.r13.avi",
+      "official_kpf_annotation_url": "https://gitlab.kitware.com/meva/meva-data-repo/-/raw/master/annotation/DIVA-phase-2/MEVA/kitware/2018-03-05/13/2018-03-05.13-15-01.13-20-01.school.G328.activities.yml",
+      "local_annotation_path": "evaluation/meva_sample/annotations/2018-03-05.13-15-01.13-20-01.school.G328.activities.yml",
+      "annotation_sha256": "79bf4013f79dd9189cdbf6a81f70036fbdda3c7267ff2859c98f2fdd9383cce3",
+      "camera_id": "G328",
+      "facility": "school",
+      "scenario_group_id": "meva_scenario_20180305_1315",
+      "reference_system": "PTS seconds normalized to clip start (with explicit clip_offset_sec from source stream)",
+      "clip_offset_sec": 2.5,
+      "requested_duration_sec": 8.0,
+      "ffmpeg_extraction_command": "/opt/homebrew/bin/ffmpeg -y -ss 2.5 -i https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/13/2018-03-05.13-15-01.13-20-01.school.G328.r13.avi -t 8.0 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -an evaluation/meva_sample/clips/meva_ep02_G328_open_door_enter.mp4",
+      "probed_clip_metadata": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1072,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_time": 0.0,
+        "duration": 8.0,
+        "nb_frames": 240,
+        "size_bytes": 3316635
+      },
+      "official_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "kpf_id2": 7,
+          "actor_ids": [
+            10
+          ],
+          "tsr0_frames": [
+            136,
+            163
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            4.53,
+            5.43
+          ],
+          "clip_pts_time_range_sec": [
+            2.03,
+            2.93
+          ],
+          "clip_midpoint_sec": 2.48
+        },
+        {
+          "activity": "person_enters_scene_through_structure",
+          "kpf_id2": 8,
+          "actor_ids": [
+            11
+          ],
+          "tsr0_frames": [
+            136,
+            180
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            4.53,
+            6.0
+          ],
+          "clip_pts_time_range_sec": [
+            2.03,
+            3.5
+          ],
+          "clip_midpoint_sec": 2.76
+        },
+        {
+          "activity": "person_enters_scene_through_structure",
+          "kpf_id2": 14,
+          "actor_ids": [
+            18
+          ],
+          "tsr0_frames": [
+            205,
+            248
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            6.83,
+            8.27
+          ],
+          "clip_pts_time_range_sec": [
+            4.33,
+            5.77
+          ],
+          "clip_midpoint_sec": 5.05
+        }
+      ],
+      "manual_verification_status": "verified_against_kpf_yaml_and_clip_pts",
+      "license": "CC BY 4.0",
+      "attribution": "\"Multiview Extended Video with Activities\" (MEVA) dataset by Kitware Inc. and the Intelligence Advanced Research Projects Activity (IARPA), licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0, http://creativecommons.org/licenses/by/4.0/, https://mevadata.org/resources/MEVA-data-license.txt)."
+    },
+    {
+      "episode_id": "meva_ep03_G424_put_down_heavy_object",
+      "clip_filename": "meva_ep03_G424_put_down_heavy_object.mp4",
+      "clip_path": "evaluation/meva_sample/clips/meva_ep03_G424_put_down_heavy_object.mp4",
+      "sha256": "8d23589baeb20d46833bd8f00a985d25c06463e1503829534247f6d1f70a0af2",
+      "source_video_id": "2018-03-05.13-15-00.13-20-00.school.G424.r13.avi",
+      "source_s3_url": "https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/13/2018-03-05.13-15-00.13-20-00.school.G424.r13.avi",
+      "official_kpf_annotation_url": "https://gitlab.kitware.com/meva/meva-data-repo/-/raw/master/annotation/DIVA-phase-2/MEVA/kitware/2018-03-05/13/2018-03-05.13-15-00.13-20-00.school.G424.activities.yml",
+      "local_annotation_path": "evaluation/meva_sample/annotations/2018-03-05.13-15-00.13-20-00.school.G424.activities.yml",
+      "annotation_sha256": "93f715d26dfa800541b3950e2a8099bd0161d81f8312449aa9f1d97df4ad67e8",
+      "camera_id": "G424",
+      "facility": "school",
+      "scenario_group_id": "meva_scenario_20180305_1315",
+      "reference_system": "PTS seconds normalized to clip start (with explicit clip_offset_sec from source stream)",
+      "clip_offset_sec": 96.0,
+      "requested_duration_sec": 9.0,
+      "ffmpeg_extraction_command": "/opt/homebrew/bin/ffmpeg -y -ss 96.0 -i https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/13/2018-03-05.13-15-00.13-20-00.school.G424.r13.avi -t 9.0 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -an evaluation/meva_sample/clips/meva_ep03_G424_put_down_heavy_object.mp4",
+      "probed_clip_metadata": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_time": 0.0,
+        "duration": 9.0,
+        "nb_frames": 270,
+        "size_bytes": 6697034
+      },
+      "official_activities": [
+        {
+          "activity": "person_carries_heavy_object",
+          "kpf_id2": 15,
+          "actor_ids": [
+            23,
+            22
+          ],
+          "tsr0_frames": [
+            2961,
+            2991
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            98.7,
+            99.7
+          ],
+          "clip_pts_time_range_sec": [
+            2.7,
+            3.7
+          ],
+          "clip_midpoint_sec": 3.2
+        },
+        {
+          "activity": "person_puts_down_object",
+          "kpf_id2": 14,
+          "actor_ids": [
+            20,
+            21
+          ],
+          "tsr0_frames": [
+            2961,
+            2976
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            98.7,
+            99.2
+          ],
+          "clip_pts_time_range_sec": [
+            2.7,
+            3.2
+          ],
+          "clip_midpoint_sec": 2.95
+        }
+      ],
+      "manual_verification_status": "verified_against_kpf_yaml_and_clip_pts",
+      "license": "CC BY 4.0",
+      "attribution": "\"Multiview Extended Video with Activities\" (MEVA) dataset by Kitware Inc. and the Intelligence Advanced Research Projects Activity (IARPA), licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0, http://creativecommons.org/licenses/by/4.0/, https://mevadata.org/resources/MEVA-data-license.txt)."
+    },
+    {
+      "episode_id": "meva_ep04_G424_pick_up_and_exit_door",
+      "clip_filename": "meva_ep04_G424_pick_up_and_exit_door.mp4",
+      "clip_path": "evaluation/meva_sample/clips/meva_ep04_G424_pick_up_and_exit_door.mp4",
+      "sha256": "c92ede6b66b424e484d6a83724a193b8509d1db5b30523b0768c04634cb51107",
+      "source_video_id": "2018-03-05.13-15-00.13-20-00.school.G424.r13.avi",
+      "source_s3_url": "https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/13/2018-03-05.13-15-00.13-20-00.school.G424.r13.avi",
+      "official_kpf_annotation_url": "https://gitlab.kitware.com/meva/meva-data-repo/-/raw/master/annotation/DIVA-phase-2/MEVA/kitware/2018-03-05/13/2018-03-05.13-15-00.13-20-00.school.G424.activities.yml",
+      "local_annotation_path": "evaluation/meva_sample/annotations/2018-03-05.13-15-00.13-20-00.school.G424.activities.yml",
+      "annotation_sha256": "93f715d26dfa800541b3950e2a8099bd0161d81f8312449aa9f1d97df4ad67e8",
+      "camera_id": "G424",
+      "facility": "school",
+      "scenario_group_id": "meva_scenario_20180305_1315",
+      "reference_system": "PTS seconds normalized to clip start (with explicit clip_offset_sec from source stream)",
+      "clip_offset_sec": 125.0,
+      "requested_duration_sec": 10.0,
+      "ffmpeg_extraction_command": "/opt/homebrew/bin/ffmpeg -y -ss 125.0 -i https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/13/2018-03-05.13-15-00.13-20-00.school.G424.r13.avi -t 10.0 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -an evaluation/meva_sample/clips/meva_ep04_G424_pick_up_and_exit_door.mp4",
+      "probed_clip_metadata": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_time": 0.0,
+        "duration": 10.0,
+        "nb_frames": 300,
+        "size_bytes": 5879550
+      },
+      "official_activities": [
+        {
+          "activity": "person_picks_up_object",
+          "kpf_id2": 37,
+          "actor_ids": [
+            51,
+            52
+          ],
+          "tsr0_frames": [
+            3819,
+            3834
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            127.3,
+            127.8
+          ],
+          "clip_pts_time_range_sec": [
+            2.3,
+            2.8
+          ],
+          "clip_midpoint_sec": 2.55
+        },
+        {
+          "activity": "person_opens_facility_door",
+          "kpf_id2": 17,
+          "actor_ids": [
+            26
+          ],
+          "tsr0_frames": [
+            3929,
+            3989
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            130.97,
+            132.97
+          ],
+          "clip_pts_time_range_sec": [
+            5.97,
+            7.97
+          ],
+          "clip_midpoint_sec": 6.97
+        },
+        {
+          "activity": "person_exits_scene_through_structure",
+          "kpf_id2": 18,
+          "actor_ids": [
+            27
+          ],
+          "tsr0_frames": [
+            3929,
+            3997
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            130.97,
+            133.23
+          ],
+          "clip_pts_time_range_sec": [
+            5.97,
+            8.23
+          ],
+          "clip_midpoint_sec": 7.1
+        }
+      ],
+      "manual_verification_status": "verified_against_kpf_yaml_and_clip_pts",
+      "license": "CC BY 4.0",
+      "attribution": "\"Multiview Extended Video with Activities\" (MEVA) dataset by Kitware Inc. and the Intelligence Advanced Research Projects Activity (IARPA), licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0, http://creativecommons.org/licenses/by/4.0/, https://mevadata.org/resources/MEVA-data-license.txt)."
+    },
+    {
+      "episode_id": "meva_ep05_G336_hand_interacts_person",
+      "clip_filename": "meva_ep05_G336_hand_interacts_person.mp4",
+      "clip_path": "evaluation/meva_sample/clips/meva_ep05_G336_hand_interacts_person.mp4",
+      "sha256": "1fc0a149c22dd076b5aac177c092794ba984a54314ef0e4dc3f06d4762ace59a",
+      "source_video_id": "2018-03-05.13-20-00.13-25-00.school.G336.r13.avi",
+      "source_s3_url": "https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/13/2018-03-05.13-20-00.13-25-00.school.G336.r13.avi",
+      "official_kpf_annotation_url": "https://gitlab.kitware.com/meva/meva-data-repo/-/raw/master/annotation/DIVA-phase-2/MEVA/kitware/2018-03-05/13/2018-03-05.13-20-00.13-25-00.school.G336.activities.yml",
+      "local_annotation_path": "evaluation/meva_sample/annotations/2018-03-05.13-20-00.13-25-00.school.G336.activities.yml",
+      "annotation_sha256": "03acf23469f129ad82fbc73e4446d8f6182510b62714d99b5849f67aecb7e661",
+      "camera_id": "G336",
+      "facility": "school",
+      "scenario_group_id": "meva_scenario_20180305_1320",
+      "reference_system": "PTS seconds normalized to clip start (with explicit clip_offset_sec from source stream)",
+      "clip_offset_sec": 27.0,
+      "requested_duration_sec": 8.0,
+      "ffmpeg_extraction_command": "/opt/homebrew/bin/ffmpeg -y -ss 27.0 -i https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/13/2018-03-05.13-20-00.13-25-00.school.G336.r13.avi -t 8.0 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -an evaluation/meva_sample/clips/meva_ep05_G336_hand_interacts_person.mp4",
+      "probed_clip_metadata": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_time": 0.0,
+        "duration": 8.0,
+        "nb_frames": 240,
+        "size_bytes": 4968797
+      },
+      "official_activities": [
+        {
+          "activity": "hand_interacts_with_person",
+          "kpf_id2": 10,
+          "actor_ids": [
+            15,
+            16
+          ],
+          "tsr0_frames": [
+            891,
+            965
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            29.7,
+            32.17
+          ],
+          "clip_pts_time_range_sec": [
+            2.7,
+            5.17
+          ],
+          "clip_midpoint_sec": 3.94
+        }
+      ],
+      "manual_verification_status": "verified_against_kpf_yaml_and_clip_pts",
+      "license": "CC BY 4.0",
+      "attribution": "\"Multiview Extended Video with Activities\" (MEVA) dataset by Kitware Inc. and the Intelligence Advanced Research Projects Activity (IARPA), licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0, http://creativecommons.org/licenses/by/4.0/, https://mevadata.org/resources/MEVA-data-license.txt)."
+    },
+    {
+      "episode_id": "meva_ep06_G420_open_door_enter",
+      "clip_filename": "meva_ep06_G420_open_door_enter.mp4",
+      "clip_path": "evaluation/meva_sample/clips/meva_ep06_G420_open_door_enter.mp4",
+      "sha256": "caea1250dafde89653e1ea0ca17e10fd78f09b81a1339f20e9fe1679f5d92500",
+      "source_video_id": "2018-03-05.14-00-00.14-05-00.school.G420.r13.avi",
+      "source_s3_url": "https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-00-00.14-05-00.school.G420.r13.avi",
+      "official_kpf_annotation_url": "https://gitlab.kitware.com/meva/meva-data-repo/-/raw/master/annotation/DIVA-phase-2/MEVA/kitware/2018-03-05/14/2018-03-05.14-00-00.14-05-00.school.G420.activities.yml",
+      "local_annotation_path": "evaluation/meva_sample/annotations/2018-03-05.14-00-00.14-05-00.school.G420.activities.yml",
+      "annotation_sha256": "9f8a95fc881f90a0e427434a0c65973e58067931d8fad341de0f91be843a9150",
+      "camera_id": "G420",
+      "facility": "school",
+      "scenario_group_id": "meva_scenario_20180305_1400",
+      "reference_system": "PTS seconds normalized to clip start (with explicit clip_offset_sec from source stream)",
+      "clip_offset_sec": 137.0,
+      "requested_duration_sec": 9.0,
+      "ffmpeg_extraction_command": "/opt/homebrew/bin/ffmpeg -y -ss 137.0 -i https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-00-00.14-05-00.school.G420.r13.avi -t 9.0 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -an evaluation/meva_sample/clips/meva_ep06_G420_open_door_enter.mp4",
+      "probed_clip_metadata": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1072,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_time": 0.0,
+        "duration": 9.0,
+        "nb_frames": 270,
+        "size_bytes": 2927709
+      },
+      "official_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "kpf_id2": 0,
+          "actor_ids": [
+            1
+          ],
+          "tsr0_frames": [
+            4183,
+            4254
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            139.43,
+            141.8
+          ],
+          "clip_pts_time_range_sec": [
+            2.43,
+            4.8
+          ],
+          "clip_midpoint_sec": 3.62
+        },
+        {
+          "activity": "person_enters_scene_through_structure",
+          "kpf_id2": 1,
+          "actor_ids": [
+            2
+          ],
+          "tsr0_frames": [
+            4227,
+            4303
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            140.9,
+            143.43
+          ],
+          "clip_pts_time_range_sec": [
+            3.9,
+            6.43
+          ],
+          "clip_midpoint_sec": 5.17
+        }
+      ],
+      "manual_verification_status": "verified_against_kpf_yaml_and_clip_pts",
+      "license": "CC BY 4.0",
+      "attribution": "\"Multiview Extended Video with Activities\" (MEVA) dataset by Kitware Inc. and the Intelligence Advanced Research Projects Activity (IARPA), licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0, http://creativecommons.org/licenses/by/4.0/, https://mevadata.org/resources/MEVA-data-license.txt)."
+    },
+    {
+      "episode_id": "meva_ep07_G330_pick_up_read_document",
+      "clip_filename": "meva_ep07_G330_pick_up_read_document.mp4",
+      "clip_path": "evaluation/meva_sample/clips/meva_ep07_G330_pick_up_read_document.mp4",
+      "sha256": "4cc3c870a4b4ecf1387c5eddc952428d901268308b6e50efb094978627666eec",
+      "source_video_id": "2018-03-05.14-10-00.14-15-00.school.G330.r13.avi",
+      "source_s3_url": "https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G330.r13.avi",
+      "official_kpf_annotation_url": "https://gitlab.kitware.com/meva/meva-data-repo/-/raw/master/annotation/DIVA-phase-2/MEVA/kitware/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G330.activities.yml",
+      "local_annotation_path": "evaluation/meva_sample/annotations/2018-03-05.14-10-00.14-15-00.school.G330.activities.yml",
+      "annotation_sha256": "7c65431c7fb1fba307476089d668f6d06c7e0844a99fb5fb647fa3b04ef1476c",
+      "camera_id": "G330",
+      "facility": "school",
+      "scenario_group_id": "meva_scenario_20180305_1410",
+      "reference_system": "PTS seconds normalized to clip start (with explicit clip_offset_sec from source stream)",
+      "clip_offset_sec": 244.0,
+      "requested_duration_sec": 11.0,
+      "ffmpeg_extraction_command": "/opt/homebrew/bin/ffmpeg -y -ss 244.0 -i https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G330.r13.avi -t 11.0 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -an evaluation/meva_sample/clips/meva_ep07_G330_pick_up_read_document.mp4",
+      "probed_clip_metadata": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_time": 0.0,
+        "duration": 11.0,
+        "nb_frames": 330,
+        "size_bytes": 5678539
+      },
+      "official_activities": [
+        {
+          "activity": "person_picks_up_object",
+          "kpf_id2": 3,
+          "actor_ids": [
+            5,
+            4
+          ],
+          "tsr0_frames": [
+            7393,
+            7410
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            246.43,
+            247.0
+          ],
+          "clip_pts_time_range_sec": [
+            2.43,
+            3.0
+          ],
+          "clip_midpoint_sec": 2.71
+        },
+        {
+          "activity": "person_reads_document",
+          "kpf_id2": 4,
+          "actor_ids": [
+            6
+          ],
+          "tsr0_frames": [
+            7419,
+            7624
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            247.3,
+            254.13
+          ],
+          "clip_pts_time_range_sec": [
+            3.3,
+            10.13
+          ],
+          "clip_midpoint_sec": 6.71
+        }
+      ],
+      "manual_verification_status": "verified_against_kpf_yaml_and_clip_pts",
+      "license": "CC BY 4.0",
+      "attribution": "\"Multiview Extended Video with Activities\" (MEVA) dataset by Kitware Inc. and the Intelligence Advanced Research Projects Activity (IARPA), licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0, http://creativecommons.org/licenses/by/4.0/, https://mevadata.org/resources/MEVA-data-license.txt)."
+    },
+    {
+      "episode_id": "meva_ep08_G330_texts_on_phone_sits",
+      "clip_filename": "meva_ep08_G330_texts_on_phone_sits.mp4",
+      "clip_path": "evaluation/meva_sample/clips/meva_ep08_G330_texts_on_phone_sits.mp4",
+      "sha256": "07ed0cf46717e2d938c49850324e988574d3881deed14ecb90b32176392dcbe6",
+      "source_video_id": "2018-03-05.14-10-00.14-15-00.school.G330.r13.avi",
+      "source_s3_url": "https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G330.r13.avi",
+      "official_kpf_annotation_url": "https://gitlab.kitware.com/meva/meva-data-repo/-/raw/master/annotation/DIVA-phase-2/MEVA/kitware/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G330.activities.yml",
+      "local_annotation_path": "evaluation/meva_sample/annotations/2018-03-05.14-10-00.14-15-00.school.G330.activities.yml",
+      "annotation_sha256": "7c65431c7fb1fba307476089d668f6d06c7e0844a99fb5fb647fa3b04ef1476c",
+      "camera_id": "G330",
+      "facility": "school",
+      "scenario_group_id": "meva_scenario_20180305_1410",
+      "reference_system": "PTS seconds normalized to clip start (with explicit clip_offset_sec from source stream)",
+      "clip_offset_sec": 195.0,
+      "requested_duration_sec": 9.0,
+      "ffmpeg_extraction_command": "/opt/homebrew/bin/ffmpeg -y -ss 195.0 -i https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G330.r13.avi -t 9.0 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -an evaluation/meva_sample/clips/meva_ep08_G330_texts_on_phone_sits.mp4",
+      "probed_clip_metadata": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_time": 0.0,
+        "duration": 9.0,
+        "nb_frames": 270,
+        "size_bytes": 4842024
+      },
+      "official_activities": [
+        {
+          "activity": "person_texts_on_phone",
+          "kpf_id2": 0,
+          "actor_ids": [
+            1
+          ],
+          "tsr0_frames": [
+            5574,
+            7274
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            185.8,
+            242.47
+          ],
+          "clip_pts_time_range_sec": [
+            0.0,
+            9.0
+          ],
+          "clip_midpoint_sec": 4.5
+        },
+        {
+          "activity": "person_sits_down",
+          "kpf_id2": 2,
+          "actor_ids": [
+            3
+          ],
+          "tsr0_frames": [
+            5960,
+            5991
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            198.67,
+            199.7
+          ],
+          "clip_pts_time_range_sec": [
+            3.67,
+            4.7
+          ],
+          "clip_midpoint_sec": 4.19
+        }
+      ],
+      "manual_verification_status": "verified_against_kpf_yaml_and_clip_pts",
+      "license": "CC BY 4.0",
+      "attribution": "\"Multiview Extended Video with Activities\" (MEVA) dataset by Kitware Inc. and the Intelligence Advanced Research Projects Activity (IARPA), licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0, http://creativecommons.org/licenses/by/4.0/, https://mevadata.org/resources/MEVA-data-license.txt)."
+    },
+    {
+      "episode_id": "meva_ep09_G421_read_doc_put_pick",
+      "clip_filename": "meva_ep09_G421_read_doc_put_pick.mp4",
+      "clip_path": "evaluation/meva_sample/clips/meva_ep09_G421_read_doc_put_pick.mp4",
+      "sha256": "8b3fe9f87aaf04084c9ee7f21c39be4e5328ffca4cd3fcc5b610e78fae3ae6a8",
+      "source_video_id": "2018-03-05.14-10-00.14-15-00.school.G421.r13.avi",
+      "source_s3_url": "https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G421.r13.avi",
+      "official_kpf_annotation_url": "https://gitlab.kitware.com/meva/meva-data-repo/-/raw/master/annotation/DIVA-phase-2/MEVA/kitware/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G421.activities.yml",
+      "local_annotation_path": "evaluation/meva_sample/annotations/2018-03-05.14-10-00.14-15-00.school.G421.activities.yml",
+      "annotation_sha256": "09e680649f825a0923ff1b57b3b918d08385f0184b93dd0c5706d2454741ffd6",
+      "camera_id": "G421",
+      "facility": "school",
+      "scenario_group_id": "meva_scenario_20180305_1410",
+      "reference_system": "PTS seconds normalized to clip start (with explicit clip_offset_sec from source stream)",
+      "clip_offset_sec": 0.0,
+      "requested_duration_sec": 11.0,
+      "ffmpeg_extraction_command": "/opt/homebrew/bin/ffmpeg -y -ss 0.0 -i https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G421.r13.avi -t 11.0 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -an evaluation/meva_sample/clips/meva_ep09_G421_read_doc_put_pick.mp4",
+      "probed_clip_metadata": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1072,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_time": 2.066016,
+        "duration": 8.9333,
+        "nb_frames": 268,
+        "size_bytes": 4525391
+      },
+      "official_activities": [
+        {
+          "activity": "person_reads_document",
+          "kpf_id2": 75,
+          "actor_ids": [
+            121
+          ],
+          "tsr0_frames": [
+            20,
+            293
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            0.67,
+            9.77
+          ],
+          "clip_pts_time_range_sec": [
+            0.67,
+            8.93
+          ],
+          "clip_midpoint_sec": 4.8
+        },
+        {
+          "activity": "person_puts_down_object",
+          "kpf_id2": 14,
+          "actor_ids": [
+            18,
+            17
+          ],
+          "tsr0_frames": [
+            142,
+            170
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            4.73,
+            5.67
+          ],
+          "clip_pts_time_range_sec": [
+            4.73,
+            5.67
+          ],
+          "clip_midpoint_sec": 5.2
+        },
+        {
+          "activity": "person_picks_up_object",
+          "kpf_id2": 15,
+          "actor_ids": [
+            19,
+            20
+          ],
+          "tsr0_frames": [
+            205,
+            219
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            6.83,
+            7.3
+          ],
+          "clip_pts_time_range_sec": [
+            6.83,
+            7.3
+          ],
+          "clip_midpoint_sec": 7.06
+        }
+      ],
+      "manual_verification_status": "verified_against_kpf_yaml_and_clip_pts",
+      "license": "CC BY 4.0",
+      "attribution": "\"Multiview Extended Video with Activities\" (MEVA) dataset by Kitware Inc. and the Intelligence Advanced Research Projects Activity (IARPA), licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0, http://creativecommons.org/licenses/by/4.0/, https://mevadata.org/resources/MEVA-data-license.txt)."
+    },
+    {
+      "episode_id": "meva_ep10_G421_transfer_object_seq",
+      "clip_filename": "meva_ep10_G421_transfer_object_seq.mp4",
+      "clip_path": "evaluation/meva_sample/clips/meva_ep10_G421_transfer_object_seq.mp4",
+      "sha256": "0327c63ef18330b3d521afc459583e111fc38dcb12cef1d5913250111384a85e",
+      "source_video_id": "2018-03-05.14-10-00.14-15-00.school.G421.r13.avi",
+      "source_s3_url": "https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G421.r13.avi",
+      "official_kpf_annotation_url": "https://gitlab.kitware.com/meva/meva-data-repo/-/raw/master/annotation/DIVA-phase-2/MEVA/kitware/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G421.activities.yml",
+      "local_annotation_path": "evaluation/meva_sample/annotations/2018-03-05.14-10-00.14-15-00.school.G421.activities.yml",
+      "annotation_sha256": "09e680649f825a0923ff1b57b3b918d08385f0184b93dd0c5706d2454741ffd6",
+      "camera_id": "G421",
+      "facility": "school",
+      "scenario_group_id": "meva_scenario_20180305_1410",
+      "reference_system": "PTS seconds normalized to clip start (with explicit clip_offset_sec from source stream)",
+      "clip_offset_sec": 63.0,
+      "requested_duration_sec": 11.0,
+      "ffmpeg_extraction_command": "/opt/homebrew/bin/ffmpeg -y -ss 63.0 -i https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G421.r13.avi -t 11.0 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -an evaluation/meva_sample/clips/meva_ep10_G421_transfer_object_seq.mp4",
+      "probed_clip_metadata": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1072,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_time": 0.0,
+        "duration": 11.0,
+        "nb_frames": 330,
+        "size_bytes": 5224255
+      },
+      "official_activities": [
+        {
+          "activity": "person_transfers_object",
+          "kpf_id2": 83,
+          "actor_ids": [
+            135,
+            136
+          ],
+          "tsr0_frames": [
+            1958,
+            2029
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            65.27,
+            67.63
+          ],
+          "clip_pts_time_range_sec": [
+            2.27,
+            4.63
+          ],
+          "clip_midpoint_sec": 3.45
+        },
+        {
+          "activity": "person_puts_down_object",
+          "kpf_id2": 20,
+          "actor_ids": [
+            28,
+            27
+          ],
+          "tsr0_frames": [
+            2028,
+            2076
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            67.6,
+            69.2
+          ],
+          "clip_pts_time_range_sec": [
+            4.6,
+            6.2
+          ],
+          "clip_midpoint_sec": 5.4
+        },
+        {
+          "activity": "person_transfers_object",
+          "kpf_id2": 84,
+          "actor_ids": [
+            137,
+            138
+          ],
+          "tsr0_frames": [
+            2086,
+            2159
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            69.53,
+            71.97
+          ],
+          "clip_pts_time_range_sec": [
+            6.53,
+            8.97
+          ],
+          "clip_midpoint_sec": 7.75
+        }
+      ],
+      "manual_verification_status": "verified_against_kpf_yaml_and_clip_pts",
+      "license": "CC BY 4.0",
+      "attribution": "\"Multiview Extended Video with Activities\" (MEVA) dataset by Kitware Inc. and the Intelligence Advanced Research Projects Activity (IARPA), licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0, http://creativecommons.org/licenses/by/4.0/, https://mevadata.org/resources/MEVA-data-license.txt)."
+    },
+    {
+      "episode_id": "meva_ep11_G421_transfer_and_pick_up",
+      "clip_filename": "meva_ep11_G421_transfer_and_pick_up.mp4",
+      "clip_path": "evaluation/meva_sample/clips/meva_ep11_G421_transfer_and_pick_up.mp4",
+      "sha256": "e91ce9a92d73547d8851dac9df9c2637bb045311cab70b5d2234a898d3f3c4da",
+      "source_video_id": "2018-03-05.14-10-00.14-15-00.school.G421.r13.avi",
+      "source_s3_url": "https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G421.r13.avi",
+      "official_kpf_annotation_url": "https://gitlab.kitware.com/meva/meva-data-repo/-/raw/master/annotation/DIVA-phase-2/MEVA/kitware/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G421.activities.yml",
+      "local_annotation_path": "evaluation/meva_sample/annotations/2018-03-05.14-10-00.14-15-00.school.G421.activities.yml",
+      "annotation_sha256": "09e680649f825a0923ff1b57b3b918d08385f0184b93dd0c5706d2454741ffd6",
+      "camera_id": "G421",
+      "facility": "school",
+      "scenario_group_id": "meva_scenario_20180305_1410",
+      "reference_system": "PTS seconds normalized to clip start (with explicit clip_offset_sec from source stream)",
+      "clip_offset_sec": 94.0,
+      "requested_duration_sec": 9.0,
+      "ffmpeg_extraction_command": "/opt/homebrew/bin/ffmpeg -y -ss 94.0 -i https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G421.r13.avi -t 9.0 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -an evaluation/meva_sample/clips/meva_ep11_G421_transfer_and_pick_up.mp4",
+      "probed_clip_metadata": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1072,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_time": 0.0,
+        "duration": 9.0,
+        "nb_frames": 270,
+        "size_bytes": 4644585
+      },
+      "official_activities": [
+        {
+          "activity": "person_transfers_object",
+          "kpf_id2": 37,
+          "actor_ids": [
+            57,
+            56
+          ],
+          "tsr0_frames": [
+            2887,
+            2955
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            96.23,
+            98.5
+          ],
+          "clip_pts_time_range_sec": [
+            2.23,
+            4.5
+          ],
+          "clip_midpoint_sec": 3.37
+        },
+        {
+          "activity": "person_picks_up_object",
+          "kpf_id2": 21,
+          "actor_ids": [
+            29,
+            30
+          ],
+          "tsr0_frames": [
+            2990,
+            3007
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            99.67,
+            100.23
+          ],
+          "clip_pts_time_range_sec": [
+            5.67,
+            6.23
+          ],
+          "clip_midpoint_sec": 5.95
+        }
+      ],
+      "manual_verification_status": "verified_against_kpf_yaml_and_clip_pts",
+      "license": "CC BY 4.0",
+      "attribution": "\"Multiview Extended Video with Activities\" (MEVA) dataset by Kitware Inc. and the Intelligence Advanced Research Projects Activity (IARPA), licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0, http://creativecommons.org/licenses/by/4.0/, https://mevadata.org/resources/MEVA-data-license.txt)."
+    },
+    {
+      "episode_id": "meva_ep12_G421_transfer_put_phone",
+      "clip_filename": "meva_ep12_G421_transfer_put_phone.mp4",
+      "clip_path": "evaluation/meva_sample/clips/meva_ep12_G421_transfer_put_phone.mp4",
+      "sha256": "8e68651d9c0d005a7e12607a3fe2e63633c4a4e9242593b016a1c32a3b5874af",
+      "source_video_id": "2018-03-05.14-10-00.14-15-00.school.G421.r13.avi",
+      "source_s3_url": "https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G421.r13.avi",
+      "official_kpf_annotation_url": "https://gitlab.kitware.com/meva/meva-data-repo/-/raw/master/annotation/DIVA-phase-2/MEVA/kitware/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G421.activities.yml",
+      "local_annotation_path": "evaluation/meva_sample/annotations/2018-03-05.14-10-00.14-15-00.school.G421.activities.yml",
+      "annotation_sha256": "09e680649f825a0923ff1b57b3b918d08385f0184b93dd0c5706d2454741ffd6",
+      "camera_id": "G421",
+      "facility": "school",
+      "scenario_group_id": "meva_scenario_20180305_1410",
+      "reference_system": "PTS seconds normalized to clip start (with explicit clip_offset_sec from source stream)",
+      "clip_offset_sec": 139.0,
+      "requested_duration_sec": 10.0,
+      "ffmpeg_extraction_command": "/opt/homebrew/bin/ffmpeg -y -ss 139.0 -i https://mevadata-public-01.s3.amazonaws.com/drops-123-r13/2018-03-05/14/2018-03-05.14-10-00.14-15-00.school.G421.r13.avi -t 10.0 -c:v libx264 -crf 20 -preset fast -pix_fmt yuv420p -an evaluation/meva_sample/clips/meva_ep12_G421_transfer_put_phone.mp4",
+      "probed_clip_metadata": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1072,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_time": 0.0,
+        "duration": 10.0,
+        "nb_frames": 300,
+        "size_bytes": 4934728
+      },
+      "official_activities": [
+        {
+          "activity": "person_transfers_object",
+          "kpf_id2": 77,
+          "actor_ids": [
+            124,
+            125
+          ],
+          "tsr0_frames": [
+            4222,
+            4285
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            140.73,
+            142.83
+          ],
+          "clip_pts_time_range_sec": [
+            1.73,
+            3.83
+          ],
+          "clip_midpoint_sec": 2.78
+        },
+        {
+          "activity": "person_puts_down_object",
+          "kpf_id2": 43,
+          "actor_ids": [
+            64,
+            65
+          ],
+          "tsr0_frames": [
+            4254,
+            4281
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            141.8,
+            142.7
+          ],
+          "clip_pts_time_range_sec": [
+            2.8,
+            3.7
+          ],
+          "clip_midpoint_sec": 3.25
+        },
+        {
+          "activity": "person_texts_on_phone",
+          "kpf_id2": 78,
+          "actor_ids": [
+            126
+          ],
+          "tsr0_frames": [
+            4277,
+            4706
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            142.57,
+            156.87
+          ],
+          "clip_pts_time_range_sec": [
+            3.57,
+            10.0
+          ],
+          "clip_midpoint_sec": 6.79
+        }
+      ],
+      "manual_verification_status": "verified_against_kpf_yaml_and_clip_pts",
+      "license": "CC BY 4.0",
+      "attribution": "\"Multiview Extended Video with Activities\" (MEVA) dataset by Kitware Inc. and the Intelligence Advanced Research Projects Activity (IARPA), licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0, http://creativecommons.org/licenses/by/4.0/, https://mevadata.org/resources/MEVA-data-license.txt)."
+    }
+  ]
+}

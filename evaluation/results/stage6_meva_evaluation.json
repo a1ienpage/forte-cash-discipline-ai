@@ -1,0 +1,1500 @@
+{
+  "specification_section": "Section 14 & Section 18.3 External MEVA Evaluation",
+  "usage_status": "Independent external evaluation sample (not used for prompt or rule tuning)",
+  "counts_summary": {
+    "total_episodes": 12,
+    "unique_source_recordings": 7,
+    "unique_cameras": 7,
+    "unique_independent_scenarios": 4,
+    "source_recordings_list": [
+      "2018-03-05.13-15-00.13-20-00.school.G423.r13.avi",
+      "2018-03-05.13-15-00.13-20-00.school.G424.r13.avi",
+      "2018-03-05.13-15-01.13-20-01.school.G328.r13.avi",
+      "2018-03-05.13-20-00.13-25-00.school.G336.r13.avi",
+      "2018-03-05.14-00-00.14-05-00.school.G420.r13.avi",
+      "2018-03-05.14-10-00.14-15-00.school.G330.r13.avi",
+      "2018-03-05.14-10-00.14-15-00.school.G421.r13.avi"
+    ],
+    "cameras_list": [
+      "G328",
+      "G330",
+      "G336",
+      "G420",
+      "G421",
+      "G423",
+      "G424"
+    ],
+    "scenario_groups_list": [
+      "meva_scenario_20180305_1315",
+      "meva_scenario_20180305_1320",
+      "meva_scenario_20180305_1400",
+      "meva_scenario_20180305_1410"
+    ]
+  },
+  "base_action_recognition_summary": {
+    "total_official_gt_activities": 28,
+    "matched_activities_count": 7,
+    "base_action_recall": 0.25,
+    "base_action_recall_fraction": "7/28",
+    "temporal_localization_evaluated_count": 7,
+    "midpoint_error_within_2_0s_count": 2,
+    "midpoint_error_within_2_0s_rate": 0.2857,
+    "midpoint_error_within_3_0s_count": 3,
+    "mean_midpoint_error_sec": 2.83
+  },
+  "unfamiliar_scene_banking_diagnostic_signal": {
+    "total_episodes": 12,
+    "evaluated_episodes_count": 12,
+    "banking_failed_count": 0,
+    "banking_no_violation_count": 12,
+    "banking_violation_trigger_count": 0,
+    "banking_trigger_diagnostic_rate": 0.0,
+    "false_banking_violation_rate_on_evaluated": 0.0,
+    "banking_no_violation_rate_on_all_inputs": 1.0,
+    "methodological_note": "Согласно Разделу 14.3 ТЗ, MEVA не содержит разметки нарушений банковского кассового регламента. Доля банковских срабатываний приведена как диагностический сигнал на незнакомых сценах с ручным разбором и НЕ объединяется с банковской accuracy. Эпизоды со status='failed' учитываются отдельно в banking_failed_count и не засчитываются в banking_no_violation_count."
+  },
+  "per_episode_results": [
+    {
+      "episode_id": "meva_ep01_G423_enter_exit",
+      "status": "done",
+      "source_video_id": "2018-03-05.13-15-00.13-20-00.school.G423.r13.avi",
+      "camera_id": "G423",
+      "scenario_group_id": "meva_scenario_20180305_1315",
+      "clip_duration_sec": 11.0,
+      "cv_max_persons": 0,
+      "cv_interacting_objects": [],
+      "official_gt_activities": [
+        {
+          "activity": "person_enters_scene_through_structure",
+          "kpf_id2": 0,
+          "actor_ids": [
+            1
+          ],
+          "tsr0_frames": [
+            993,
+            1029
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            33.1,
+            34.3
+          ],
+          "clip_pts_time_range_sec": [
+            2.1,
+            3.3
+          ],
+          "clip_midpoint_sec": 2.7
+        },
+        {
+          "activity": "person_exits_scene_through_structure",
+          "kpf_id2": 1,
+          "actor_ids": [
+            2
+          ],
+          "tsr0_frames": [
+            1175,
+            1209
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            39.17,
+            40.3
+          ],
+          "clip_pts_time_range_sec": [
+            8.17,
+            9.3
+          ],
+          "clip_midpoint_sec": 8.73
+        }
+      ],
+      "diagnostic_vlm_scene_summary": "Наблюдения детектора CV: макс. людей=0, объекты=[], по кадрам [].",
+      "diagnostic_vlm_detected_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 1.5,
+          "end_sec": 4.5,
+          "frame_ids": [
+            "F0045",
+            "F0135"
+          ]
+        },
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 6.0,
+          "end_sec": 9.0,
+          "frame_ids": [
+            "F0180",
+            "F0270"
+          ]
+        },
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 10.97,
+          "end_sec": 11.0,
+          "frame_ids": [
+            "F0329"
+          ]
+        }
+      ],
+      "matched_activities": [],
+      "missed_activities": [
+        {
+          "activity": "person_enters_scene_through_structure",
+          "gt_clip_range_sec": [
+            2.1,
+            3.3
+          ]
+        },
+        {
+          "activity": "person_exits_scene_through_structure",
+          "gt_clip_range_sec": [
+            8.17,
+            9.3
+          ]
+        }
+      ],
+      "unfamiliar_scene_banking_api_behavior": {
+        "banking_verdict": "no_violation",
+        "banking_violations_returned": [],
+        "manual_review_note": "Конвейер корректно не сформировал обвинительных банковских нарушений на незнакомой небанковской сцене."
+      },
+      "processing_time_sec": 0.0
+    },
+    {
+      "episode_id": "meva_ep02_G328_open_door_enter",
+      "status": "done",
+      "source_video_id": "2018-03-05.13-15-01.13-20-01.school.G328.r13.avi",
+      "camera_id": "G328",
+      "scenario_group_id": "meva_scenario_20180305_1315",
+      "clip_duration_sec": 8.0,
+      "cv_max_persons": 0,
+      "cv_interacting_objects": [],
+      "official_gt_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "kpf_id2": 7,
+          "actor_ids": [
+            10
+          ],
+          "tsr0_frames": [
+            136,
+            163
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            4.53,
+            5.43
+          ],
+          "clip_pts_time_range_sec": [
+            2.03,
+            2.93
+          ],
+          "clip_midpoint_sec": 2.48
+        },
+        {
+          "activity": "person_enters_scene_through_structure",
+          "kpf_id2": 8,
+          "actor_ids": [
+            11
+          ],
+          "tsr0_frames": [
+            136,
+            180
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            4.53,
+            6.0
+          ],
+          "clip_pts_time_range_sec": [
+            2.03,
+            3.5
+          ],
+          "clip_midpoint_sec": 2.76
+        },
+        {
+          "activity": "person_enters_scene_through_structure",
+          "kpf_id2": 14,
+          "actor_ids": [
+            18
+          ],
+          "tsr0_frames": [
+            205,
+            248
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            6.83,
+            8.27
+          ],
+          "clip_pts_time_range_sec": [
+            4.33,
+            5.77
+          ],
+          "clip_midpoint_sec": 5.05
+        }
+      ],
+      "diagnostic_vlm_scene_summary": "Наблюдения детектора CV: макс. людей=0, объекты=[], по кадрам [].",
+      "diagnostic_vlm_detected_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 1.5,
+          "end_sec": 3.0,
+          "frame_ids": [
+            "F0045",
+            "F0090"
+          ]
+        }
+      ],
+      "matched_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "gt_clip_range_sec": [
+            2.03,
+            2.93
+          ],
+          "pred_clip_range_sec": [
+            1.5,
+            3.0
+          ],
+          "midpoint_error_sec": 0.23,
+          "interval_overlap_distance_sec": 0.0
+        }
+      ],
+      "missed_activities": [
+        {
+          "activity": "person_enters_scene_through_structure",
+          "gt_clip_range_sec": [
+            2.03,
+            3.5
+          ]
+        },
+        {
+          "activity": "person_enters_scene_through_structure",
+          "gt_clip_range_sec": [
+            4.33,
+            5.77
+          ]
+        }
+      ],
+      "unfamiliar_scene_banking_api_behavior": {
+        "banking_verdict": "no_violation",
+        "banking_violations_returned": [],
+        "manual_review_note": "Конвейер корректно не сформировал обвинительных банковских нарушений на незнакомой небанковской сцене."
+      },
+      "processing_time_sec": 0.0
+    },
+    {
+      "episode_id": "meva_ep03_G424_put_down_heavy_object",
+      "status": "done",
+      "source_video_id": "2018-03-05.13-15-00.13-20-00.school.G424.r13.avi",
+      "camera_id": "G424",
+      "scenario_group_id": "meva_scenario_20180305_1315",
+      "clip_duration_sec": 9.0,
+      "cv_max_persons": 0,
+      "cv_interacting_objects": [],
+      "official_gt_activities": [
+        {
+          "activity": "person_carries_heavy_object",
+          "kpf_id2": 15,
+          "actor_ids": [
+            23,
+            22
+          ],
+          "tsr0_frames": [
+            2961,
+            2991
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            98.7,
+            99.7
+          ],
+          "clip_pts_time_range_sec": [
+            2.7,
+            3.7
+          ],
+          "clip_midpoint_sec": 3.2
+        },
+        {
+          "activity": "person_puts_down_object",
+          "kpf_id2": 14,
+          "actor_ids": [
+            20,
+            21
+          ],
+          "tsr0_frames": [
+            2961,
+            2976
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            98.7,
+            99.2
+          ],
+          "clip_pts_time_range_sec": [
+            2.7,
+            3.2
+          ],
+          "clip_midpoint_sec": 2.95
+        }
+      ],
+      "diagnostic_vlm_scene_summary": "Наблюдения детектора CV: макс. людей=0, объекты=[], по кадрам [].",
+      "diagnostic_vlm_detected_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 1.5,
+          "end_sec": 3.0,
+          "frame_ids": [
+            "F0045",
+            "F0090"
+          ]
+        }
+      ],
+      "matched_activities": [],
+      "missed_activities": [
+        {
+          "activity": "person_carries_heavy_object",
+          "gt_clip_range_sec": [
+            2.7,
+            3.7
+          ]
+        },
+        {
+          "activity": "person_puts_down_object",
+          "gt_clip_range_sec": [
+            2.7,
+            3.2
+          ]
+        }
+      ],
+      "unfamiliar_scene_banking_api_behavior": {
+        "banking_verdict": "no_violation",
+        "banking_violations_returned": [],
+        "manual_review_note": "Конвейер корректно не сформировал обвинительных банковских нарушений на незнакомой небанковской сцене."
+      },
+      "processing_time_sec": 0.0
+    },
+    {
+      "episode_id": "meva_ep04_G424_pick_up_and_exit_door",
+      "status": "done",
+      "source_video_id": "2018-03-05.13-15-00.13-20-00.school.G424.r13.avi",
+      "camera_id": "G424",
+      "scenario_group_id": "meva_scenario_20180305_1315",
+      "clip_duration_sec": 10.0,
+      "cv_max_persons": 0,
+      "cv_interacting_objects": [],
+      "official_gt_activities": [
+        {
+          "activity": "person_picks_up_object",
+          "kpf_id2": 37,
+          "actor_ids": [
+            51,
+            52
+          ],
+          "tsr0_frames": [
+            3819,
+            3834
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            127.3,
+            127.8
+          ],
+          "clip_pts_time_range_sec": [
+            2.3,
+            2.8
+          ],
+          "clip_midpoint_sec": 2.55
+        },
+        {
+          "activity": "person_opens_facility_door",
+          "kpf_id2": 17,
+          "actor_ids": [
+            26
+          ],
+          "tsr0_frames": [
+            3929,
+            3989
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            130.97,
+            132.97
+          ],
+          "clip_pts_time_range_sec": [
+            5.97,
+            7.97
+          ],
+          "clip_midpoint_sec": 6.97
+        },
+        {
+          "activity": "person_exits_scene_through_structure",
+          "kpf_id2": 18,
+          "actor_ids": [
+            27
+          ],
+          "tsr0_frames": [
+            3929,
+            3997
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            130.97,
+            133.23
+          ],
+          "clip_pts_time_range_sec": [
+            5.97,
+            8.23
+          ],
+          "clip_midpoint_sec": 7.1
+        }
+      ],
+      "diagnostic_vlm_scene_summary": "Наблюдения детектора CV: макс. людей=0, объекты=[], по кадрам [].",
+      "diagnostic_vlm_detected_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 1.5,
+          "end_sec": 3.0,
+          "frame_ids": [
+            "F0045",
+            "F0090"
+          ]
+        }
+      ],
+      "matched_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "gt_clip_range_sec": [
+            5.97,
+            7.97
+          ],
+          "pred_clip_range_sec": [
+            1.5,
+            3.0
+          ],
+          "midpoint_error_sec": 4.72,
+          "interval_overlap_distance_sec": 2.97
+        }
+      ],
+      "missed_activities": [
+        {
+          "activity": "person_exits_scene_through_structure",
+          "gt_clip_range_sec": [
+            5.97,
+            8.23
+          ]
+        },
+        {
+          "activity": "person_picks_up_object",
+          "gt_clip_range_sec": [
+            2.3,
+            2.8
+          ]
+        }
+      ],
+      "unfamiliar_scene_banking_api_behavior": {
+        "banking_verdict": "no_violation",
+        "banking_violations_returned": [],
+        "manual_review_note": "Конвейер корректно не сформировал обвинительных банковских нарушений на незнакомой небанковской сцене."
+      },
+      "processing_time_sec": 0.0
+    },
+    {
+      "episode_id": "meva_ep05_G336_hand_interacts_person",
+      "status": "done",
+      "source_video_id": "2018-03-05.13-20-00.13-25-00.school.G336.r13.avi",
+      "camera_id": "G336",
+      "scenario_group_id": "meva_scenario_20180305_1320",
+      "clip_duration_sec": 8.0,
+      "cv_max_persons": 0,
+      "cv_interacting_objects": [],
+      "official_gt_activities": [
+        {
+          "activity": "hand_interacts_with_person",
+          "kpf_id2": 10,
+          "actor_ids": [
+            15,
+            16
+          ],
+          "tsr0_frames": [
+            891,
+            965
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            29.7,
+            32.17
+          ],
+          "clip_pts_time_range_sec": [
+            2.7,
+            5.17
+          ],
+          "clip_midpoint_sec": 3.94
+        }
+      ],
+      "diagnostic_vlm_scene_summary": "Наблюдения детектора CV: макс. людей=0, объекты=[], по кадрам [].",
+      "diagnostic_vlm_detected_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 0.0,
+          "end_sec": 1.5,
+          "frame_ids": [
+            "F0000",
+            "F0045"
+          ]
+        },
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 3.0,
+          "end_sec": 4.5,
+          "frame_ids": [
+            "F0090",
+            "F0135"
+          ]
+        },
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 6.0,
+          "end_sec": 7.97,
+          "frame_ids": [
+            "F0180",
+            "F0239"
+          ]
+        }
+      ],
+      "matched_activities": [],
+      "missed_activities": [
+        {
+          "activity": "hand_interacts_with_person",
+          "gt_clip_range_sec": [
+            2.7,
+            5.17
+          ]
+        }
+      ],
+      "unfamiliar_scene_banking_api_behavior": {
+        "banking_verdict": "no_violation",
+        "banking_violations_returned": [],
+        "manual_review_note": "Конвейер корректно не сформировал обвинительных банковских нарушений на незнакомой небанковской сцене."
+      },
+      "processing_time_sec": 0.0
+    },
+    {
+      "episode_id": "meva_ep06_G420_open_door_enter",
+      "status": "done",
+      "source_video_id": "2018-03-05.14-00-00.14-05-00.school.G420.r13.avi",
+      "camera_id": "G420",
+      "scenario_group_id": "meva_scenario_20180305_1400",
+      "clip_duration_sec": 9.0,
+      "cv_max_persons": 1,
+      "cv_interacting_objects": [],
+      "official_gt_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "kpf_id2": 0,
+          "actor_ids": [
+            1
+          ],
+          "tsr0_frames": [
+            4183,
+            4254
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            139.43,
+            141.8
+          ],
+          "clip_pts_time_range_sec": [
+            2.43,
+            4.8
+          ],
+          "clip_midpoint_sec": 3.62
+        },
+        {
+          "activity": "person_enters_scene_through_structure",
+          "kpf_id2": 1,
+          "actor_ids": [
+            2
+          ],
+          "tsr0_frames": [
+            4227,
+            4303
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            140.9,
+            143.43
+          ],
+          "clip_pts_time_range_sec": [
+            3.9,
+            6.43
+          ],
+          "clip_midpoint_sec": 5.17
+        }
+      ],
+      "diagnostic_vlm_scene_summary": "1. person_enters_scene_through_structure (F0180, 6.00s, F0269, 8.97s) - Чел",
+      "diagnostic_vlm_detected_activities": [
+        {
+          "activity": "person_enters_scene_through_structure",
+          "start_sec": 6.0,
+          "end_sec": 8.97,
+          "frame_ids": [
+            "F0180",
+            "F0269"
+          ]
+        },
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 6.0,
+          "end_sec": 8.97,
+          "frame_ids": [
+            "F0180",
+            "F0269"
+          ]
+        },
+        {
+          "activity": "person_reads_document",
+          "start_sec": 6.0,
+          "end_sec": 8.97,
+          "frame_ids": [
+            "F0180",
+            "F0269"
+          ]
+        }
+      ],
+      "matched_activities": [
+        {
+          "activity": "person_enters_scene_through_structure",
+          "gt_clip_range_sec": [
+            3.9,
+            6.43
+          ],
+          "pred_clip_range_sec": [
+            6.0,
+            8.97
+          ],
+          "midpoint_error_sec": 2.32,
+          "interval_overlap_distance_sec": 0.0
+        },
+        {
+          "activity": "person_opens_facility_door",
+          "gt_clip_range_sec": [
+            2.43,
+            4.8
+          ],
+          "pred_clip_range_sec": [
+            6.0,
+            8.97
+          ],
+          "midpoint_error_sec": 3.87,
+          "interval_overlap_distance_sec": 1.2
+        }
+      ],
+      "missed_activities": [],
+      "unfamiliar_scene_banking_api_behavior": {
+        "banking_verdict": "no_violation",
+        "banking_violations_returned": [],
+        "manual_review_note": "Конвейер корректно не сформировал обвинительных банковских нарушений на незнакомой небанковской сцене."
+      },
+      "processing_time_sec": 0.0
+    },
+    {
+      "episode_id": "meva_ep07_G330_pick_up_read_document",
+      "status": "done",
+      "source_video_id": "2018-03-05.14-10-00.14-15-00.school.G330.r13.avi",
+      "camera_id": "G330",
+      "scenario_group_id": "meva_scenario_20180305_1410",
+      "clip_duration_sec": 11.0,
+      "cv_max_persons": 1,
+      "cv_interacting_objects": [],
+      "official_gt_activities": [
+        {
+          "activity": "person_picks_up_object",
+          "kpf_id2": 3,
+          "actor_ids": [
+            5,
+            4
+          ],
+          "tsr0_frames": [
+            7393,
+            7410
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            246.43,
+            247.0
+          ],
+          "clip_pts_time_range_sec": [
+            2.43,
+            3.0
+          ],
+          "clip_midpoint_sec": 2.71
+        },
+        {
+          "activity": "person_reads_document",
+          "kpf_id2": 4,
+          "actor_ids": [
+            6
+          ],
+          "tsr0_frames": [
+            7419,
+            7624
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            247.3,
+            254.13
+          ],
+          "clip_pts_time_range_sec": [
+            3.3,
+            10.13
+          ],
+          "clip_midpoint_sec": 6.71
+        }
+      ],
+      "diagnostic_vlm_scene_summary": "Наблюдение за залом без видимых действий людей.",
+      "diagnostic_vlm_detected_activities": [
+        {
+          "activity": "person_texts_on_phone",
+          "start_sec": 0.0,
+          "end_sec": 1.5,
+          "frame_ids": [
+            "F0000",
+            "F0045"
+          ]
+        },
+        {
+          "activity": "person_texts_on_phone",
+          "start_sec": 4.5,
+          "end_sec": 6.0,
+          "frame_ids": [
+            "F0135",
+            "F0180"
+          ]
+        },
+        {
+          "activity": "person_texts_on_phone",
+          "start_sec": 9.0,
+          "end_sec": 10.97,
+          "frame_ids": [
+            "F0270",
+            "F0329"
+          ]
+        }
+      ],
+      "matched_activities": [],
+      "missed_activities": [
+        {
+          "activity": "person_picks_up_object",
+          "gt_clip_range_sec": [
+            2.43,
+            3.0
+          ]
+        },
+        {
+          "activity": "person_reads_document",
+          "gt_clip_range_sec": [
+            3.3,
+            10.13
+          ]
+        }
+      ],
+      "unfamiliar_scene_banking_api_behavior": {
+        "banking_verdict": "no_violation",
+        "banking_violations_returned": [],
+        "manual_review_note": "Конвейер корректно не сформировал обвинительных банковских нарушений на незнакомой небанковской сцене."
+      },
+      "processing_time_sec": 0.0
+    },
+    {
+      "episode_id": "meva_ep08_G330_texts_on_phone_sits",
+      "status": "done",
+      "source_video_id": "2018-03-05.14-10-00.14-15-00.school.G330.r13.avi",
+      "camera_id": "G330",
+      "scenario_group_id": "meva_scenario_20180305_1410",
+      "clip_duration_sec": 9.0,
+      "cv_max_persons": 1,
+      "cv_interacting_objects": [],
+      "official_gt_activities": [
+        {
+          "activity": "person_texts_on_phone",
+          "kpf_id2": 0,
+          "actor_ids": [
+            1
+          ],
+          "tsr0_frames": [
+            5574,
+            7274
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            185.8,
+            242.47
+          ],
+          "clip_pts_time_range_sec": [
+            0.0,
+            9.0
+          ],
+          "clip_midpoint_sec": 4.5
+        },
+        {
+          "activity": "person_sits_down",
+          "kpf_id2": 2,
+          "actor_ids": [
+            3
+          ],
+          "tsr0_frames": [
+            5960,
+            5991
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            198.67,
+            199.7
+          ],
+          "clip_pts_time_range_sec": [
+            3.67,
+            4.7
+          ],
+          "clip_midpoint_sec": 4.19
+        }
+      ],
+      "diagnostic_vlm_scene_summary": "Человек входит в зал через дверь.",
+      "diagnostic_vlm_detected_activities": [
+        {
+          "activity": "person_enters_scene_through_structure",
+          "start_sec": 0.0,
+          "end_sec": 1.5,
+          "frame_ids": [
+            "F0000",
+            "F0045"
+          ]
+        },
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 0.0,
+          "end_sec": 1.5,
+          "frame_ids": [
+            "F0000",
+            "F0045"
+          ]
+        }
+      ],
+      "matched_activities": [],
+      "missed_activities": [
+        {
+          "activity": "person_sits_down",
+          "gt_clip_range_sec": [
+            3.67,
+            4.7
+          ]
+        },
+        {
+          "activity": "person_texts_on_phone",
+          "gt_clip_range_sec": [
+            0.0,
+            9.0
+          ]
+        }
+      ],
+      "unfamiliar_scene_banking_api_behavior": {
+        "banking_verdict": "no_violation",
+        "banking_violations_returned": [],
+        "manual_review_note": "Конвейер корректно не сформировал обвинительных банковских нарушений на незнакомой небанковской сцене."
+      },
+      "processing_time_sec": 0.0
+    },
+    {
+      "episode_id": "meva_ep09_G421_read_doc_put_pick",
+      "status": "done",
+      "source_video_id": "2018-03-05.14-10-00.14-15-00.school.G421.r13.avi",
+      "camera_id": "G421",
+      "scenario_group_id": "meva_scenario_20180305_1410",
+      "clip_duration_sec": 8.9333,
+      "cv_max_persons": 6,
+      "cv_interacting_objects": [
+        "bottle"
+      ],
+      "official_gt_activities": [
+        {
+          "activity": "person_reads_document",
+          "kpf_id2": 75,
+          "actor_ids": [
+            121
+          ],
+          "tsr0_frames": [
+            20,
+            293
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            0.67,
+            9.77
+          ],
+          "clip_pts_time_range_sec": [
+            0.67,
+            8.93
+          ],
+          "clip_midpoint_sec": 4.8
+        },
+        {
+          "activity": "person_puts_down_object",
+          "kpf_id2": 14,
+          "actor_ids": [
+            18,
+            17
+          ],
+          "tsr0_frames": [
+            142,
+            170
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            4.73,
+            5.67
+          ],
+          "clip_pts_time_range_sec": [
+            4.73,
+            5.67
+          ],
+          "clip_midpoint_sec": 5.2
+        },
+        {
+          "activity": "person_picks_up_object",
+          "kpf_id2": 15,
+          "actor_ids": [
+            19,
+            20
+          ],
+          "tsr0_frames": [
+            205,
+            219
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            6.83,
+            7.3
+          ],
+          "clip_pts_time_range_sec": [
+            6.83,
+            7.3
+          ],
+          "clip_midpoint_sec": 7.06
+        }
+      ],
+      "diagnostic_vlm_scene_summary": "Люди в кафе, взаимодействуют, сидят, едят, пьют.",
+      "diagnostic_vlm_detected_activities": [
+        {
+          "activity": "person_picks_up_object",
+          "start_sec": 1.5,
+          "end_sec": 3.0,
+          "frame_ids": [
+            "F0045",
+            "F0090"
+          ]
+        },
+        {
+          "activity": "person_texts_on_phone",
+          "start_sec": 4.5,
+          "end_sec": 6.0,
+          "frame_ids": [
+            "F0135",
+            "F0180"
+          ]
+        },
+        {
+          "activity": "person_sits_down",
+          "start_sec": 6.0,
+          "end_sec": 8.93,
+          "frame_ids": [
+            "F0180",
+            "F0267"
+          ]
+        }
+      ],
+      "matched_activities": [
+        {
+          "activity": "person_picks_up_object",
+          "gt_clip_range_sec": [
+            6.83,
+            7.3
+          ],
+          "pred_clip_range_sec": [
+            1.5,
+            3.0
+          ],
+          "midpoint_error_sec": 4.81,
+          "interval_overlap_distance_sec": 3.83
+        }
+      ],
+      "missed_activities": [
+        {
+          "activity": "person_puts_down_object",
+          "gt_clip_range_sec": [
+            4.73,
+            5.67
+          ]
+        },
+        {
+          "activity": "person_reads_document",
+          "gt_clip_range_sec": [
+            0.67,
+            8.93
+          ]
+        }
+      ],
+      "unfamiliar_scene_banking_api_behavior": {
+        "banking_verdict": "no_violation",
+        "banking_violations_returned": [],
+        "manual_review_note": "Конвейер корректно не сформировал обвинительных банковских нарушений на незнакомой небанковской сцене."
+      },
+      "processing_time_sec": 0.0
+    },
+    {
+      "episode_id": "meva_ep10_G421_transfer_object_seq",
+      "status": "done",
+      "source_video_id": "2018-03-05.14-10-00.14-15-00.school.G421.r13.avi",
+      "camera_id": "G421",
+      "scenario_group_id": "meva_scenario_20180305_1410",
+      "clip_duration_sec": 11.0,
+      "cv_max_persons": 6,
+      "cv_interacting_objects": [],
+      "official_gt_activities": [
+        {
+          "activity": "person_transfers_object",
+          "kpf_id2": 83,
+          "actor_ids": [
+            135,
+            136
+          ],
+          "tsr0_frames": [
+            1958,
+            2029
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            65.27,
+            67.63
+          ],
+          "clip_pts_time_range_sec": [
+            2.27,
+            4.63
+          ],
+          "clip_midpoint_sec": 3.45
+        },
+        {
+          "activity": "person_puts_down_object",
+          "kpf_id2": 20,
+          "actor_ids": [
+            28,
+            27
+          ],
+          "tsr0_frames": [
+            2028,
+            2076
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            67.6,
+            69.2
+          ],
+          "clip_pts_time_range_sec": [
+            4.6,
+            6.2
+          ],
+          "clip_midpoint_sec": 5.4
+        },
+        {
+          "activity": "person_transfers_object",
+          "kpf_id2": 84,
+          "actor_ids": [
+            137,
+            138
+          ],
+          "tsr0_frames": [
+            2086,
+            2159
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            69.53,
+            71.97
+          ],
+          "clip_pts_time_range_sec": [
+            6.53,
+            8.97
+          ],
+          "clip_midpoint_sec": 7.75
+        }
+      ],
+      "diagnostic_vlm_scene_summary": "Люди в кафе, взаимодействуют, сидят, стоят, передают предметы.",
+      "diagnostic_vlm_detected_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 1.5,
+          "end_sec": 4.5,
+          "frame_ids": [
+            "F0045",
+            "F0135"
+          ]
+        },
+        {
+          "activity": "person_picks_up_object",
+          "start_sec": 6.0,
+          "end_sec": 10.97,
+          "frame_ids": [
+            "F0180",
+            "F0329"
+          ]
+        },
+        {
+          "activity": "person_texts_on_phone",
+          "start_sec": 6.0,
+          "end_sec": 10.97,
+          "frame_ids": [
+            "F0180",
+            "F0329"
+          ]
+        }
+      ],
+      "matched_activities": [],
+      "missed_activities": [
+        {
+          "activity": "person_puts_down_object",
+          "gt_clip_range_sec": [
+            4.6,
+            6.2
+          ]
+        },
+        {
+          "activity": "person_transfers_object",
+          "gt_clip_range_sec": [
+            2.27,
+            4.63
+          ]
+        },
+        {
+          "activity": "person_transfers_object",
+          "gt_clip_range_sec": [
+            6.53,
+            8.97
+          ]
+        }
+      ],
+      "unfamiliar_scene_banking_api_behavior": {
+        "banking_verdict": "no_violation",
+        "banking_violations_returned": [],
+        "manual_review_note": "Конвейер корректно не сформировал обвинительных банковских нарушений на незнакомой небанковской сцене."
+      },
+      "processing_time_sec": 0.0
+    },
+    {
+      "episode_id": "meva_ep11_G421_transfer_and_pick_up",
+      "status": "done",
+      "source_video_id": "2018-03-05.14-10-00.14-15-00.school.G421.r13.avi",
+      "camera_id": "G421",
+      "scenario_group_id": "meva_scenario_20180305_1410",
+      "clip_duration_sec": 9.0,
+      "cv_max_persons": 6,
+      "cv_interacting_objects": [],
+      "official_gt_activities": [
+        {
+          "activity": "person_transfers_object",
+          "kpf_id2": 37,
+          "actor_ids": [
+            57,
+            56
+          ],
+          "tsr0_frames": [
+            2887,
+            2955
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            96.23,
+            98.5
+          ],
+          "clip_pts_time_range_sec": [
+            2.23,
+            4.5
+          ],
+          "clip_midpoint_sec": 3.37
+        },
+        {
+          "activity": "person_picks_up_object",
+          "kpf_id2": 21,
+          "actor_ids": [
+            29,
+            30
+          ],
+          "tsr0_frames": [
+            2990,
+            3007
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            99.67,
+            100.23
+          ],
+          "clip_pts_time_range_sec": [
+            5.67,
+            6.23
+          ],
+          "clip_midpoint_sec": 5.95
+        }
+      ],
+      "diagnostic_vlm_scene_summary": "Люди в кафе, взаимодействуют, сидят, стоят, передают предметы.",
+      "diagnostic_vlm_detected_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 1.5,
+          "end_sec": 3.0,
+          "frame_ids": [
+            "F0045",
+            "F0090"
+          ]
+        },
+        {
+          "activity": "person_picks_up_object",
+          "start_sec": 4.5,
+          "end_sec": 6.0,
+          "frame_ids": [
+            "F0135",
+            "F0180"
+          ]
+        },
+        {
+          "activity": "person_texts_on_phone",
+          "start_sec": 6.0,
+          "end_sec": 8.97,
+          "frame_ids": [
+            "F0180",
+            "F0269"
+          ]
+        }
+      ],
+      "matched_activities": [
+        {
+          "activity": "person_picks_up_object",
+          "gt_clip_range_sec": [
+            5.67,
+            6.23
+          ],
+          "pred_clip_range_sec": [
+            4.5,
+            6.0
+          ],
+          "midpoint_error_sec": 0.7,
+          "interval_overlap_distance_sec": 0.0
+        }
+      ],
+      "missed_activities": [
+        {
+          "activity": "person_transfers_object",
+          "gt_clip_range_sec": [
+            2.23,
+            4.5
+          ]
+        }
+      ],
+      "unfamiliar_scene_banking_api_behavior": {
+        "banking_verdict": "no_violation",
+        "banking_violations_returned": [],
+        "manual_review_note": "Конвейер корректно не сформировал обвинительных банковских нарушений на незнакомой небанковской сцене."
+      },
+      "processing_time_sec": 0.0
+    },
+    {
+      "episode_id": "meva_ep12_G421_transfer_put_phone",
+      "status": "done",
+      "source_video_id": "2018-03-05.14-10-00.14-15-00.school.G421.r13.avi",
+      "camera_id": "G421",
+      "scenario_group_id": "meva_scenario_20180305_1410",
+      "clip_duration_sec": 10.0,
+      "cv_max_persons": 6,
+      "cv_interacting_objects": [
+        "bottle"
+      ],
+      "official_gt_activities": [
+        {
+          "activity": "person_transfers_object",
+          "kpf_id2": 77,
+          "actor_ids": [
+            124,
+            125
+          ],
+          "tsr0_frames": [
+            4222,
+            4285
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            140.73,
+            142.83
+          ],
+          "clip_pts_time_range_sec": [
+            1.73,
+            3.83
+          ],
+          "clip_midpoint_sec": 2.78
+        },
+        {
+          "activity": "person_puts_down_object",
+          "kpf_id2": 43,
+          "actor_ids": [
+            64,
+            65
+          ],
+          "tsr0_frames": [
+            4254,
+            4281
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            141.8,
+            142.7
+          ],
+          "clip_pts_time_range_sec": [
+            2.8,
+            3.7
+          ],
+          "clip_midpoint_sec": 3.25
+        },
+        {
+          "activity": "person_texts_on_phone",
+          "kpf_id2": 78,
+          "actor_ids": [
+            126
+          ],
+          "tsr0_frames": [
+            4277,
+            4706
+          ],
+          "verified_against_primary_kpf_yaml": true,
+          "source_time_range_sec": [
+            142.57,
+            156.87
+          ],
+          "clip_pts_time_range_sec": [
+            3.57,
+            10.0
+          ],
+          "clip_midpoint_sec": 6.79
+        }
+      ],
+      "diagnostic_vlm_scene_summary": "Люди в зале, взаимодействуют, сидят, стоят, передают предметы.",
+      "diagnostic_vlm_detected_activities": [
+        {
+          "activity": "person_opens_facility_door",
+          "start_sec": 1.5,
+          "end_sec": 3.0,
+          "frame_ids": [
+            "F0045",
+            "F0090"
+          ]
+        },
+        {
+          "activity": "person_picks_up_object",
+          "start_sec": 6.0,
+          "end_sec": 7.5,
+          "frame_ids": [
+            "F0180",
+            "F0225"
+          ]
+        },
+        {
+          "activity": "person_texts_on_phone",
+          "start_sec": 9.97,
+          "end_sec": 10.0,
+          "frame_ids": [
+            "F0299"
+          ]
+        }
+      ],
+      "matched_activities": [
+        {
+          "activity": "person_texts_on_phone",
+          "gt_clip_range_sec": [
+            3.57,
+            10.0
+          ],
+          "pred_clip_range_sec": [
+            9.97,
+            10.0
+          ],
+          "midpoint_error_sec": 3.19,
+          "interval_overlap_distance_sec": 0.0
+        }
+      ],
+      "missed_activities": [
+        {
+          "activity": "person_puts_down_object",
+          "gt_clip_range_sec": [
+            2.8,
+            3.7
+          ]
+        },
+        {
+          "activity": "person_transfers_object",
+          "gt_clip_range_sec": [
+            1.73,
+            3.83
+          ]
+        }
+      ],
+      "unfamiliar_scene_banking_api_behavior": {
+        "banking_verdict": "no_violation",
+        "banking_violations_returned": [],
+        "manual_review_note": "Конвейер корректно не сформировал обвинительных банковских нарушений на незнакомой небанковской сцене."
+      },
+      "processing_time_sec": 0.0
+    }
+  ],
+  "provenance": {
+    "run_id": "2026-10-18T06-45-00Z-review0550-r01-r15",
+    "enabled_public_rules_count": 9,
+    "disabled_diagnostic_rules_count": 11,
+    "enabled_rule_codes": [
+      "collection_bag_accepted_without_check",
+      "counting_in_client_absence",
+      "personal_belongings_outerwear_on_desk",
+      "personal_phone_usage",
+      "safe_left_open_during_work",
+      "safe_left_open_on_exit",
+      "unattended_cash_on_desk_on_exit",
+      "unattended_collection_bag_on_desk",
+      "unattended_previous_client_cash"
+    ],
+    "disabled_rule_codes": [
+      "cash_door_left_unlocked_on_entry",
+      "closing_procedure_lights_off_return",
+      "collection_bag_stored_without_recount",
+      "food_or_drink_at_workstation",
+      "mixed_denominations_packaging",
+      "multiple_clients_in_cash_room",
+      "no_id_or_manual_recount",
+      "post_count_cash_manipulation",
+      "unattended_documents_stamps_on_exit",
+      "unauthorized_person_in_cashier_zone",
+      "unlocked_workstation_on_exit"
+    ],
+    "execution_provenance_disclosure": {
+      "cv_only_open42": "fresh_live_execution_with_r01_coordinate_fix",
+      "cv_only_all_210_augmentations": "fresh_live_execution_with_r01_coordinate_fix",
+      "vlm_only_and_hybrid_open42": "revalidated_from_cached_vlm_inference_with_r02_r10_metrics",
+      "hybrid_pilot_50_augmentations": "recomputed_with_r10_r11_row_consistency_from_cached_vlm_inference",
+      "meva_external_12": "recomputed_with_r09_failed_accounting_from_cached_vlm_inference"
+    },
+    "code_sha256": {
+      "app/analyzer.py": "0a819cb2b0e37579e8bc1886cc6d0c5e4aaaebfb51a0b9ded437d3aefcce6a9a",
+      "app/cv_detector.py": "ee1dc8917dda4dc664d27c43c3a669e3d6eff27aa8d88be1576753c523c02a36",
+      "app/main.py": "f714eca48d37c6a0f6b9d538087d61df32bf057fd6c3f4cb2bc6ff235c4b18ee",
+      "app/regulations.py": "0867650d1fec3cd874e961f9693743d3f149a5c50f72693e31bfce4135ba5c23",
+      "app/schemas.py": "de0c0d179f78e5177d3a19f934cd2a3ef1e502d080ca49214b63f9a6789f44e0",
+      "app/video_decoder.py": "bbda9bbd893e631dfb05fc7df40431872b9a590df7a0091f3e3bdc47b5417824",
+      "app/vlm_engine.py": "701463e5409fa9bf34c8081f0369ebd087e7b7b62930fafeddea6749d1f68df4",
+      "app/worker.py": "ef01c35d55017731b0fcbb5a8617208f36fdfa200f128b4962aabfc2f65f054f"
+    }
+  }
+}

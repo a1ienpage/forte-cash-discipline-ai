@@ -1,0 +1,594 @@
+{
+  "author_and_methodology": "Разметка подготовлена инженерной командой Datathon 26 путём ручного покадрового просмотра 42 открытых видеороликов и сверки наблюдаемых действий с официальными текстами Постановления Правления НБРК № 231 (V1900019680) и № 14 (V2000020075). Официальный файл open/open_labels.xlsx не содержит категорий нарушений, поэтому оценка точности категорий возможна исключительно относительно данной собственной разметки команды с учётом задокументированных неоднозначных случаев.",
+  "duplicate_pairs_note": "В 42 видеофайлах обнаружены 2 пары полных побайтовых дубликатов по SHA-256 (40 уникальных видео): 1) Х-4 и Х-47 (нарушение, в официальной таблице размечены разные фазы одного длящегося эпизода: 57с и 68с); 2) Х-5 и Х-48 (оба без нарушений).",
+  "items": {
+    "X-1": {
+      "stem": "X-1",
+      "origin_group_id": "open_group_01_X-1",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 22.0,
+      "team_category_code": "post_count_cash_manipulation",
+      "expected_events": [
+        {
+          "code": "post_count_cash_manipulation",
+          "timecode_sec": 22.0
+        }
+      ],
+      "regulatory_basis_status": "internal_sop_or_indirect_nbk231",
+      "ambiguity_note": "На 22с кассир отделяет несколько купюр вручную после пересчёта на машинке. Прямого запрета в тексте Постановления НБРК № 231 (п. 19–20) на отделение части купюр без повторного прогона всей пачки через счётчик нет (требуется соответствие фактической суммы приходному документу); правило опирается на внутренний регламент кассового контроля банка."
+    },
+    "X-2": {
+      "stem": "X-2",
+      "origin_group_id": "open_group_02_X-2",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 10.0,
+      "team_category_code": "no_id_or_manual_recount",
+      "expected_events": [
+        {
+          "code": "no_id_or_manual_recount",
+          "timecode_sec": 10.0
+        }
+      ],
+      "regulatory_basis_status": "ambiguous_visibility_and_procedure",
+      "ambiguity_note": "Клиент кладёт пачку денег на стол, кассир помещает их в счётчик. Отсутствие бумажного удостоверения в кадре не доказывает непроверку личности (п. 19 пп. 1 НБРК № 231 допускает данные из сервиса цифровых документов в терминале АБИС, кроме того проверка могла быть выполнена до начала фрагмента). Машинный пересчёт на счётчике сам по себе является полистным пересчётом."
+    },
+    "Х-10": {
+      "stem": "Х-10",
+      "origin_group_id": "open_group_03_Х-10",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-11": {
+      "stem": "Х-11",
+      "origin_group_id": "open_group_04_Х-11",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 18.0,
+      "team_category_code": "closing_procedure_lights_off_return",
+      "expected_events": [
+        {
+          "code": "closing_procedure_lights_off_return",
+          "timecode_sec": 18.0
+        }
+      ],
+      "regulatory_basis_status": "internal_sop_only",
+      "ambiguity_note": "Кассир выключает свет на 17-18с и возвращается к столу в темноте. В публичных Постановлениях НБРК № 231 и № 14 отсутствует норма о порядке выключения света и запрете возврата к столу после выключения освещения — это правило внутреннего распорядка банка."
+    },
+    "Х-12": {
+      "stem": "Х-12",
+      "origin_group_id": "open_group_05_Х-12",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-13": {
+      "stem": "Х-13",
+      "origin_group_id": "open_group_06_Х-13",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 47.0,
+      "team_category_code": "collection_bag_stored_without_recount",
+      "expected_events": [
+        {
+          "code": "collection_bag_stored_without_recount",
+          "timecode_sec": 47.0
+        }
+      ],
+      "regulatory_basis_status": "ambiguous_stage_nbk231",
+      "ambiguity_note": "Кассир извлекает корешки из зелёной инкассаторской сумки и на 47с убирает их в сейф без пересчёта на счётчике. В п. 24–25 Правил НБРК № 231 описан приём сумок на хранение; порядок и сроки вскрытия и полистного пересчёта инкассированной выручки определяются внутренними правилами банка."
+    },
+    "Х-14": {
+      "stem": "Х-14",
+      "origin_group_id": "open_group_07_Х-14",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-15": {
+      "stem": "Х-15",
+      "origin_group_id": "open_group_08_Х-15",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 15.0,
+      "team_category_code": "unattended_collection_bag_on_desk",
+      "expected_events": [
+        {
+          "code": "unattended_collection_bag_on_desk",
+          "timecode_sec": 15.0
+        }
+      ],
+      "regulatory_basis_status": "public_mandatory_nbk231_clause20_80",
+      "ambiguity_note": "Кассир покидает кассу на 15с, оставив инкассаторскую сумку открыто на рабочем столе (п. 20 абз. 2, п. 80 Правил НБРК № 231)."
+    },
+    "Х-16": {
+      "stem": "Х-16",
+      "origin_group_id": "open_group_09_Х-16",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-17": {
+      "stem": "Х-17",
+      "origin_group_id": "open_group_10_Х-17",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 7.0,
+      "team_category_code": "collection_bag_accepted_without_check",
+      "expected_events": [
+        {
+          "code": "collection_bag_accepted_without_check",
+          "timecode_sec": 7.0
+        }
+      ],
+      "regulatory_basis_status": "public_mandatory_nbk231_clause24",
+      "ambiguity_note": "Быстрая передача инкассаторской сумки из рук в руки на 7с без осмотра целостности, пломбы и сверки с препроводительным документом (п. 24 Правил НБРК № 231)."
+    },
+    "Х-18": {
+      "stem": "Х-18",
+      "origin_group_id": "open_group_11_Х-18",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 20.0,
+      "team_category_code": "multiple_clients_in_cash_room",
+      "expected_events": [
+        {
+          "code": "multiple_clients_in_cash_room",
+          "timecode_sec": 20.0
+        }
+      ],
+      "regulatory_basis_status": "internal_sop_queue_order",
+      "ambiguity_note": "На 20с во время работы с наличными первого клиента в кассу входит второй человек и передаёт предметы через плечо первого клиента. Пункты 19–20 Правил НБРК № 231 требуют пересчёта в присутствии клиента и уборки денег предыдущего клиента, но запрет на вход второго посетителя без смешивания наличных относится к внутреннему порядку очерёдности банка (enabled=False)."
+    },
+    "Х-19": {
+      "stem": "Х-19",
+      "origin_group_id": "open_group_12_Х-19",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-20": {
+      "stem": "Х-20",
+      "origin_group_id": "open_group_13_Х-20",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 5.0,
+      "team_category_code": "safe_left_open_during_work",
+      "expected_events": [
+        {
+          "code": "safe_left_open_during_work",
+          "timecode_sec": 5.0
+        }
+      ],
+      "regulatory_basis_status": "public_mandatory_nbk231_clause20_80",
+      "ambiguity_note": "Кассир берёт наличные из сейфа на 5с и работает за столом при распахнутой дверце сейфа с ценностями внутри (п. 20 абз. 2, п. 80, 121 Правил НБРК № 231)."
+    },
+    "Х-21": {
+      "stem": "Х-21",
+      "origin_group_id": "open_group_14_Х-21",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-22": {
+      "stem": "Х-22",
+      "origin_group_id": "open_group_15_Х-22",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 14.0,
+      "team_category_code": "safe_left_open_on_exit",
+      "expected_events": [
+        {
+          "code": "safe_left_open_on_exit",
+          "timecode_sec": 14.0
+        }
+      ],
+      "regulatory_basis_status": "public_mandatory_nbk231_clause20_80",
+      "ambiguity_note": "При выходе из помещения кассы на 14с дверца сейфа с ценностями остаётся приоткрытой/незапертой (п. 20 абз. 2, п. 80, 121, 124 Правил НБРК № 231)."
+    },
+    "Х-23": {
+      "stem": "Х-23",
+      "origin_group_id": "open_group_16_Х-23",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-24": {
+      "stem": "Х-24",
+      "origin_group_id": "open_group_17_Х-24",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 8.0,
+      "team_category_code": "unattended_documents_stamps_on_exit",
+      "expected_events": [
+        {
+          "code": "unattended_documents_stamps_on_exit",
+          "timecode_sec": 8.0
+        }
+      ],
+      "regulatory_basis_status": "ambiguous_document_type_clause80",
+      "ambiguity_note": "При выходе кассира на 8с на столе остаются папка с бумагами и кассовые принадлежности. Пункт 80 Правил НБРК № 231 регулирует сохранность наличных денег и ценностей; по общему плану CCTV невозможно доказать, что папка содержит бланки строгой отчётности (enabled=False)."
+    },
+    "Х-25": {
+      "stem": "Х-25",
+      "origin_group_id": "open_group_18_Х-25",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-26": {
+      "stem": "Х-26",
+      "origin_group_id": "open_group_19_Х-26",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 9.0,
+      "team_category_code": "unattended_cash_on_desk_on_exit",
+      "expected_events": [
+        {
+          "code": "unattended_cash_on_desk_on_exit",
+          "timecode_sec": 9.0
+        }
+      ],
+      "regulatory_basis_status": "public_mandatory_nbk231_clause20",
+      "ambiguity_note": "Кассир оставляет пачку банкнот на столе и выходит из помещения кассы на 9с (п. 20 абз. 2 Правил НБРК № 231)."
+    },
+    "Х-27": {
+      "stem": "Х-27",
+      "origin_group_id": "open_group_20_Х-27",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-28": {
+      "stem": "Х-28",
+      "origin_group_id": "open_group_21_Х-28",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 7.0,
+      "team_category_code": "unlocked_workstation_on_exit",
+      "expected_events": [
+        {
+          "code": "unlocked_workstation_on_exit",
+          "timecode_sec": 7.0
+        }
+      ],
+      "regulatory_basis_status": "internal_it_security_sop",
+      "ambiguity_note": "Кассир выходит из кассы на 7с при открытом ноутбуке со светящимся экраном. В Постановлении НБРК № 231 нет нормы о закрытии крышки ноутбука или блокировке ОС при выходе из кассы, а по общему плану камеры невозможно достоверно отличить активную сессию АБИС от заставки блокировки."
+    },
+    "Х-29": {
+      "stem": "Х-29",
+      "origin_group_id": "open_group_22_Х-29",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-3": {
+      "stem": "Х-3",
+      "origin_group_id": "open_group_23_Х-3",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-30": {
+      "stem": "Х-30",
+      "origin_group_id": "open_group_24_Х-30",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 13.0,
+      "team_category_code": "unauthorized_person_in_cashier_zone",
+      "expected_events": [
+        {
+          "code": "unauthorized_person_in_cashier_zone",
+          "timecode_sec": 13.0
+        }
+      ],
+      "regulatory_basis_status": "ambiguous_access_list_nbk231_clause14",
+      "ambiguity_note": "На 13с во внутреннюю зону кассира заходит второй человек через входную дверь. По п. 14 Правил НБРК № 231 список лиц, имеющих допуск в кассовый узел, определяется внутренним приказом банка; без интеграции со СКУД полномочия вошедшего визуально недоказуемы (enabled=False)."
+    },
+    "Х-31": {
+      "stem": "Х-31",
+      "origin_group_id": "open_group_25_Х-31",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-32": {
+      "stem": "Х-32",
+      "origin_group_id": "open_group_26_Х-32",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 5.0,
+      "team_category_code": "cash_door_left_unlocked_on_entry",
+      "expected_events": [
+        {
+          "code": "cash_door_left_unlocked_on_entry",
+          "timecode_sec": 5.0
+        }
+      ],
+      "regulatory_basis_status": "ambiguous_visual_lock_state",
+      "ambiguity_note": "Кассир входит в кассу и садится за стол на 5с, не совершая движения запирания замка изнутри. При закрытом полотне двери и наличии электромагнитного/автоматического замка факт незапертости двери визуально недоказуем без проверки ручки или видимой щели."
+    },
+    "Х-33": {
+      "stem": "Х-33",
+      "origin_group_id": "open_group_27_Х-33",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 6.0,
+      "team_category_code": "personal_phone_usage",
+      "expected_events": [
+        {
+          "code": "personal_phone_usage",
+          "timecode_sec": 6.0
+        }
+      ],
+      "regulatory_basis_status": "public_mandatory_nbk231_clause12",
+      "ambiguity_note": "На 6с кассир садится за рабочий стол и держит/использует смартфон в руках (п. 12 абз. 2 Правил НБРК № 231 запрещает внос работниками в кассовый узел средств связи с функцией фото/видеофиксации)."
+    },
+    "Х-34": {
+      "stem": "Х-34",
+      "origin_group_id": "open_group_28_Х-34",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 13.0,
+      "team_category_code": "counting_in_client_absence",
+      "expected_events": [
+        {
+          "code": "counting_in_client_absence",
+          "timecode_sec": 13.0
+        }
+      ],
+      "regulatory_basis_status": "public_mandatory_nbk231_clause20",
+      "ambiguity_note": "На 13с клиент встаёт со стула и выходит из кассы, пока кассир продолжает пересчёт принятых наличных на счётчике (п. 20 абз. 1 Правил НБРК № 231: приём и пересчёт осуществляются в присутствии клиента)."
+    },
+    "Х-35": {
+      "stem": "Х-35",
+      "origin_group_id": "open_group_29_Х-35",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-37": {
+      "stem": "Х-37",
+      "origin_group_id": "open_group_30_Х-37",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-38": {
+      "stem": "Х-38",
+      "origin_group_id": "open_group_31_Х-38",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 33.0,
+      "team_category_code": "unattended_previous_client_cash",
+      "expected_events": [
+        {
+          "code": "unattended_previous_client_cash",
+          "timecode_sec": 33.0
+        }
+      ],
+      "regulatory_basis_status": "public_mandatory_nbk231_clause20",
+      "ambiguity_note": "На 33с после ухода первого клиента входит следующий клиент, когда деньги предыдущего клиента ещё лежат на столе и убираются в сейф при новом клиенте (п. 20 абз. 2 Правил НБРК № 231)."
+    },
+    "Х-39": {
+      "stem": "Х-39",
+      "origin_group_id": "open_group_32_Х-39",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-4": {
+      "stem": "Х-4",
+      "origin_group_id": "open_group_33_Х-4_Х-47",
+      "duplicates": [
+        "Х-47"
+      ],
+      "official_verdict": "violation",
+      "official_timecode_sec": 57.0,
+      "team_category_code": "unattended_previous_client_cash",
+      "expected_events": [
+        {
+          "code": "unattended_previous_client_cash",
+          "timecode_sec": 57.0
+        },
+        {
+          "code": "unattended_previous_client_cash",
+          "timecode_sec": 68.0
+        }
+      ],
+      "regulatory_basis_status": "public_mandatory_nbk231_clause20",
+      "ambiguity_note": "Файл побайтово идентичен Х-47 (SHA256 совпадает). В официальной таблице у Х-4 указана 57 секунда (вход нового клиента при неубранных деньгах первого клиента), а у Х-47 — 68 секунда (1 мин 8 сек, приём денег второго клиента рядом с деньгами первого). Прямое нарушение п. 20 абз. 2 Правил НБРК № 231."
+    },
+    "Х-40": {
+      "stem": "Х-40",
+      "origin_group_id": "open_group_34_Х-40",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 17.0,
+      "team_category_code": "personal_belongings_outerwear_on_desk",
+      "expected_events": [
+        {
+          "code": "personal_belongings_outerwear_on_desk",
+          "timecode_sec": 17.0
+        }
+      ],
+      "regulatory_basis_status": "public_mandatory_nbk231_clause12",
+      "ambiguity_note": "На 17с кассир снимает верхнюю одежду (куртку) и кладёт её вместе с личной сумкой на рабочий стол в кассе (п. 12 абз. 1 Правил НБРК № 231: хранение личных вещей работников осуществляется вне кассового узла)."
+    },
+    "Х-43": {
+      "stem": "Х-43",
+      "origin_group_id": "open_group_35_Х-43",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-44": {
+      "stem": "Х-44",
+      "origin_group_id": "open_group_36_Х-44",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 16.0,
+      "team_category_code": "mixed_denominations_packaging",
+      "expected_events": [
+        {
+          "code": "mixed_denominations_packaging",
+          "timecode_sec": 16.0
+        }
+      ],
+      "regulatory_basis_status": "ambiguous_stage_nbk231_clause42_50",
+      "ambiguity_note": "На 16с после пересчёта кассир складывает купюры разных номиналов в одну стопку. Пункты 42 и 46–50 Правил НБРК № 231 регулируют финальное формирование корешков (100 листов с бандеролью) и пачек (1000 листов); промежуточное складывание при пересчёте не является упаковкой, а номинал по разрешению 464x848 достоверно не читается (enabled=False)."
+    },
+    "Х-45": {
+      "stem": "Х-45",
+      "origin_group_id": "open_group_37_Х-45",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-46": {
+      "stem": "Х-46",
+      "origin_group_id": "open_group_38_Х-46",
+      "duplicates": [],
+      "official_verdict": "violation",
+      "official_timecode_sec": 11.0,
+      "team_category_code": "food_or_drink_at_workstation",
+      "expected_events": [
+        {
+          "code": "food_or_drink_at_workstation",
+          "timecode_sec": 11.0
+        }
+      ],
+      "regulatory_basis_status": "internal_sop_and_nbk231_clause12",
+      "ambiguity_note": "На 11с кассир берёт стакан с напитком и пьёт за рабочим столом рядом с наличными. В Постановлении НБРК № 231 нет прямого упоминания напитков/еды (есть только общее требование п. 12 о хранении личных вещей вне кассового узла и п. 3 пп. 6 о защите банкнот от повреждений); прямой запрет напитков относится к внутреннему СОП."
+    },
+    "Х-47": {
+      "stem": "Х-47",
+      "origin_group_id": "open_group_33_Х-4_Х-47",
+      "duplicates": [
+        "Х-4"
+      ],
+      "official_verdict": "violation",
+      "official_timecode_sec": 68.0,
+      "team_category_code": "unattended_previous_client_cash",
+      "expected_events": [
+        {
+          "code": "unattended_previous_client_cash",
+          "timecode_sec": 57.0
+        },
+        {
+          "code": "unattended_previous_client_cash",
+          "timecode_sec": 68.0
+        }
+      ],
+      "regulatory_basis_status": "public_mandatory_nbk231_clause20",
+      "ambiguity_note": "Побайтовый дубликат файла Х-4. В официальной разметке указан таймстемп 1 минута 8 секунда (68.0с)."
+    },
+    "Х-48": {
+      "stem": "Х-48",
+      "origin_group_id": "open_group_39_Х-48_Х-5",
+      "duplicates": [
+        "Х-5"
+      ],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-5": {
+      "stem": "Х-5",
+      "origin_group_id": "open_group_39_Х-48_Х-5",
+      "duplicates": [
+        "Х-48"
+      ],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    },
+    "Х-8": {
+      "stem": "Х-8",
+      "origin_group_id": "open_group_40_Х-8",
+      "duplicates": [],
+      "official_verdict": "no_violation",
+      "official_timecode_sec": null,
+      "team_category_code": null,
+      "expected_events": [],
+      "regulatory_basis_status": "clean_reference",
+      "ambiguity_note": "Визуально подтверждённых нарушений в ролике не зафиксировано."
+    }
+  }
+}

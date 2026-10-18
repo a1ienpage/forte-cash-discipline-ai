@@ -1,0 +1,20 @@
+# Single source of truth synchronized with pyproject.toml and uv.lock (Section 4.1)
+# Verified on Apple Silicon M4 (Python 3.13.9)
+fastapi==0.143.3
+uvicorn==0.54.0
+python-multipart==0.0.32
+pydantic==2.12.3
+av==19.0.1
+numpy==2.3.5
+opencv-python==5.0.0.93
+pillow==12.0.0
+ultralytics==8.4.178
+mlx==0.32.4
+mlx-vlm==0.7.8
+llguidance==1.9.1
+transformers==5.20.1
+huggingface-hub==2.2.0
+openpyxl==3.1.5
+psutil==7.0.0
+httpx==0.28.1
+pytest==9.1.1

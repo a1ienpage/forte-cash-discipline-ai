@@ -1,0 +1,908 @@
+{
+  "dataset_name": "ForteBank Datathon 26 Open Dataset",
+  "total_files": 42,
+  "unique_sha256_groups": 40,
+  "exact_duplicate_groups": [
+    [
+      "Х-4",
+      "Х-47"
+    ],
+    [
+      "Х-48",
+      "Х-5"
+    ]
+  ],
+  "hash_usage_policy": "Checksums are recorded strictly for data provenance, duplicate grouping, and reproducibility. Prohibitions per Section 3 & 5.1: never used by app/ to select or influence analysis results.",
+  "files": [
+    {
+      "filename": "X-1.mov",
+      "stem": "X-1",
+      "size_bytes": 5253179,
+      "md5": "767f2a65c96f8253bbe8e2f9d700e2a3",
+      "sha256": "8911a9219b9433091824e553a70bb80335f075fd8ac982d2062d2ecf023c16bc",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "11640/389",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "25.933333",
+        "nb_frames": "776"
+      },
+      "origin_group_id": "open_group_01_X-1",
+      "duplicates": []
+    },
+    {
+      "filename": "X-2.mov",
+      "stem": "X-2",
+      "size_bytes": 3476145,
+      "md5": "cdf8c6d946765256427f68ffa89974f1",
+      "sha256": "9932ae0a10d3b9371bf52ea558dc19092fcf47adcd275a73a52a56b95464bca6",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "3825/128",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "17.066667",
+        "nb_frames": "510"
+      },
+      "origin_group_id": "open_group_02_X-2",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-10.mov",
+      "stem": "Х-10",
+      "size_bytes": 3225765,
+      "md5": "cc15799ee16a1c9d15fdbd7531d046bf",
+      "sha256": "57a0e46c7a45f0e831f61d9c80722fefe4b74dbcfe1d3031ff58307d481f9a5c",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "15.566667",
+        "nb_frames": "467"
+      },
+      "origin_group_id": "open_group_03_Х-10",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-11.mov",
+      "stem": "Х-11",
+      "size_bytes": 5203328,
+      "md5": "52d8217b15bc14b128e5d36d675bb98a",
+      "sha256": "b3a954a5b761ad47943e061599315e3fe9d22573eeb92bb14bf315cdcd422fc5",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "3825/128",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "25.600000",
+        "nb_frames": "765"
+      },
+      "origin_group_id": "open_group_04_Х-11",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-12.mov",
+      "stem": "Х-12",
+      "size_bytes": 8542083,
+      "md5": "5c78378409c487c886b479d6fe561d0d",
+      "sha256": "955755baf54418b48ea645dcd98e7e8dcca1d1e227e9b286a9427062db304fd4",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "12670/423",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "42.300000",
+        "nb_frames": "1267"
+      },
+      "origin_group_id": "open_group_05_Х-12",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-13.mov",
+      "stem": "Х-13",
+      "size_bytes": 13198271,
+      "md5": "1fb32d10e1499480865e6b72199c6a3d",
+      "sha256": "a37930cf119bb691be77d8624b18333b04d9c67066a7f4627d63e3208dfa6057",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "19560/653",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "65.300000",
+        "nb_frames": "1956"
+      },
+      "origin_group_id": "open_group_06_Х-13",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-14.mov",
+      "stem": "Х-14",
+      "size_bytes": 28718927,
+      "md5": "91f6d6e30c28c1d899ce874a06444561",
+      "sha256": "7d6890ecb4a2b28bbdd3b61b6711566eee84a53ab3439c40cd9b6a3a6714c681",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "64095/2138",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "142.533021",
+        "nb_frames": "4273"
+      },
+      "origin_group_id": "open_group_07_Х-14",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-15.mov",
+      "stem": "Х-15",
+      "size_bytes": 4236340,
+      "md5": "d4e7c11733f8a6982fce711cf62c6a90",
+      "sha256": "69caf59620fcd80bedcb664514730ab38f2f800da27000a8e037d7440be5dc7a",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "9360/313",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "20.866667",
+        "nb_frames": "624"
+      },
+      "origin_group_id": "open_group_08_Х-15",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-16.mov",
+      "stem": "Х-16",
+      "size_bytes": 4606731,
+      "md5": "d4d0dce8ff94ba59eb6be0780b18339e",
+      "sha256": "3f516431cf37e3900b7eae857a7b09be258f485702ab56bc6e5b6129103f1fa5",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "10200/341",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "22.733021",
+        "nb_frames": "680"
+      },
+      "origin_group_id": "open_group_09_Х-16",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-17.mov",
+      "stem": "Х-17",
+      "size_bytes": 3032008,
+      "md5": "1cff94bb96d75439b00365a07adee716",
+      "sha256": "0378b8026b2e6afd1775a5d0fdd12dd09c491785b626e9c20428f7dc6bd59364",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "14.733333",
+        "nb_frames": "442"
+      },
+      "origin_group_id": "open_group_10_Х-17",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-18.mov",
+      "stem": "Х-18",
+      "size_bytes": 4581688,
+      "md5": "abebea33f273d52bd3f50fb57c5444b9",
+      "sha256": "90607b0b0cb772fcf29b0c7e0e56fa6af36da6fac0efe93b8a616b5de94a156c",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "3380/113",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "22.600000",
+        "nb_frames": "676"
+      },
+      "origin_group_id": "open_group_11_Х-18",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-19.mov",
+      "stem": "Х-19",
+      "size_bytes": 11603296,
+      "md5": "595c577e53299940a5c557bf84c795a2",
+      "sha256": "16065504b21260bff18698c7bbf048ffa356c9de43d43b92643b6c2eddedac0f",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "51600/1723",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "57.433021",
+        "nb_frames": "1720"
+      },
+      "origin_group_id": "open_group_12_Х-19",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-20.mov",
+      "stem": "Х-20",
+      "size_bytes": 2426840,
+      "md5": "c19c3785b4a311ee97a6d0df1e9bddd6",
+      "sha256": "7e585e33517f7258bd2d1ed3e139556609bc997bb07b78355555060ef193b77a",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "11.633333",
+        "nb_frames": "349"
+      },
+      "origin_group_id": "open_group_13_Х-20",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-21.mov",
+      "stem": "Х-21",
+      "size_bytes": 4032781,
+      "md5": "7356dd59916c98eae91b2710b15ccb27",
+      "sha256": "efd876a04224cac781ac64bf5d6e107ded67340b7b7715fd9ca3408b240a1075",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "2925/98",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "19.600000",
+        "nb_frames": "585"
+      },
+      "origin_group_id": "open_group_14_Х-21",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-22.mov",
+      "stem": "Х-22",
+      "size_bytes": 4259557,
+      "md5": "b88d9942288015ffe424d5a50f206ab2",
+      "sha256": "c9a30d44907e4a41b3a8ccf101774cd2e0804de20927bfbc9e1ccba1f2326b78",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "18840/631",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "21.033021",
+        "nb_frames": "628"
+      },
+      "origin_group_id": "open_group_15_Х-22",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-23.mov",
+      "stem": "Х-23",
+      "size_bytes": 3700449,
+      "md5": "cc739e64be12fc0acdeb582d4fdc0463",
+      "sha256": "b637677ef5a7f0fa54d9f116ce6493cf74a4c99b8149a9c9916b96ef257535bd",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "8175/274",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "18.266667",
+        "nb_frames": "545"
+      },
+      "origin_group_id": "open_group_16_Х-23",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-24.mov",
+      "stem": "Х-24",
+      "size_bytes": 3044364,
+      "md5": "b18427a9a72818c2768fbf501ec2d9e3",
+      "sha256": "c175a683749401d5a9ecf6f1c188b64fa8a09543f41482c1e4eb2232255715d3",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "14.700000",
+        "nb_frames": "441"
+      },
+      "origin_group_id": "open_group_17_Х-24",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-25.mov",
+      "stem": "Х-25",
+      "size_bytes": 6403873,
+      "md5": "8661055b1e0d0d2b083347eff3b581f7",
+      "sha256": "901f61cf1a1b8754dda56466308c19fc203a1a4c0e85d1e7827849d34e2d52f0",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "9500/317",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "31.700000",
+        "nb_frames": "950"
+      },
+      "origin_group_id": "open_group_18_Х-25",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-26.mov",
+      "stem": "Х-26",
+      "size_bytes": 4036985,
+      "md5": "23bc05eb011f80545a6009d98836baa6",
+      "sha256": "e3a00b6e0f38b1d9b5498140f14906c71e204359262a90ce7a9974d64bf081e9",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "2960/99",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "19.800000",
+        "nb_frames": "592"
+      },
+      "origin_group_id": "open_group_19_Х-26",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-27.mov",
+      "stem": "Х-27",
+      "size_bytes": 5406454,
+      "md5": "9183adf045efbbc3cb115605e9ca704b",
+      "sha256": "d3d21494d74e40a7586fe4f6164e515f6621a2d413538c4e15c67d394e85fc2d",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "23730/793",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "26.433021",
+        "nb_frames": "791"
+      },
+      "origin_group_id": "open_group_20_Х-27",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-28.mov",
+      "stem": "Х-28",
+      "size_bytes": 3342900,
+      "md5": "545c045acd070acb09ff2594f1b44577",
+      "sha256": "d15ef04bcfae571bd2d7fc4e4d709ba595ae19f44136a43e7277f17e7b6e5b6d",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1845/62",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "16.533021",
+        "nb_frames": "492"
+      },
+      "origin_group_id": "open_group_21_Х-28",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-29.mov",
+      "stem": "Х-29",
+      "size_bytes": 3514376,
+      "md5": "4c92ba52ec957d0ecf81a09f66817b29",
+      "sha256": "b9bfb76ac8ea47eb368fc78a2f6370e4d98e79185972f63cf301ee22f12b5941",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "5150/173",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "17.300000",
+        "nb_frames": "515"
+      },
+      "origin_group_id": "open_group_22_Х-29",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-3.mov",
+      "stem": "Х-3",
+      "size_bytes": 4077202,
+      "md5": "c5efdc077357191503d132c9b0ccca1d",
+      "sha256": "21468fcef4ea5f45ce7d465e620f84e09c8b50314f4ecdc06f69224c701b3a5b",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "17970/601",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "20.033021",
+        "nb_frames": "599"
+      },
+      "origin_group_id": "open_group_23_Х-3",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-30.mov",
+      "stem": "Х-30",
+      "size_bytes": 3862661,
+      "md5": "0608eca654509fddf4bb0dc799e2e6de",
+      "sha256": "05af66ce27b83d7c10c5d33b6f1847ec042c01ed21afdcbd43a13abcefd28199",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1405/47",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "18.800000",
+        "nb_frames": "562"
+      },
+      "origin_group_id": "open_group_24_Х-30",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-31.mov",
+      "stem": "Х-31",
+      "size_bytes": 4854144,
+      "md5": "442dc88203d3715c5293e7da2156bd35",
+      "sha256": "6a9fa7dd2e6db4cbe57f3c96a6cb256f23c04aa4e6fd44622fdf5de662cc0649",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "3555/119",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "23.800000",
+        "nb_frames": "711"
+      },
+      "origin_group_id": "open_group_25_Х-31",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-32.mov",
+      "stem": "Х-32",
+      "size_bytes": 4327825,
+      "md5": "e00ced6c40089f399ab909d11629a5df",
+      "sha256": "bcc277cbf1a36245156b2bb9a0e0b826432390b42040c0b82201a8c21ab23ce9",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "6370/213",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "21.300000",
+        "nb_frames": "637"
+      },
+      "origin_group_id": "open_group_26_Х-32",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-33.mov",
+      "stem": "Х-33",
+      "size_bytes": 2928496,
+      "md5": "5575e411e2810a72703890f0b2443c10",
+      "sha256": "209e8aaca88df59064e5f28b3bcc489fee3eea9eb920889b69c03c83d52430c6",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "14.333333",
+        "nb_frames": "430"
+      },
+      "origin_group_id": "open_group_27_Х-33",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-34.mov",
+      "stem": "Х-34",
+      "size_bytes": 3593850,
+      "md5": "a91d22affe251b634dc0d7fd63235c9e",
+      "sha256": "f3e351bea71150f4e8c76e2c8f0656a4e92063319d7cd39e264078c5ba9139c3",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "3975/133",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "17.733333",
+        "nb_frames": "530"
+      },
+      "origin_group_id": "open_group_28_Х-34",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-35.mov",
+      "stem": "Х-35",
+      "size_bytes": 11456965,
+      "md5": "d19984330918f5f57453950acce2118a",
+      "sha256": "26430119e074d6f0eb5dbc7ec3e26bbc31cf18903265bb4372bd7d7104908640",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "51000/1703",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "56.766667",
+        "nb_frames": "1700"
+      },
+      "origin_group_id": "open_group_29_Х-35",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-37.mov",
+      "stem": "Х-37",
+      "size_bytes": 3247107,
+      "md5": "189e0353de852ff8f2ab3cd977db2a0f",
+      "sha256": "ac4cf04844c0aa08a5e19f5f7fe984f1477943294922d6ef77bdc5b88b97160e",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "7095/238",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "15.866667",
+        "nb_frames": "473"
+      },
+      "origin_group_id": "open_group_30_Х-37",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-38.mov",
+      "stem": "Х-38",
+      "size_bytes": 11922108,
+      "md5": "e5a64fff53efade025ae10e6bbd047df",
+      "sha256": "5a6f6a13ef88191ec1d9a2a303f1be74d16aa3381a57aaadba8850aac715ff10",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "53010/1769",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "58.966667",
+        "nb_frames": "1767"
+      },
+      "origin_group_id": "open_group_31_Х-38",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-39.mov",
+      "stem": "Х-39",
+      "size_bytes": 15887333,
+      "md5": "5fd1b371c742b676b6c029d16c2e2198",
+      "sha256": "deeeee54539fb894b17447296bd7f0807b9dc662bad9af4dcd27f4fbdd677187",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "35385/1181",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "78.733021",
+        "nb_frames": "2359"
+      },
+      "origin_group_id": "open_group_32_Х-39",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-4.mov",
+      "stem": "Х-4",
+      "size_bytes": 14707558,
+      "md5": "fdd5aa51aefe4b42dd4d318bbbd3f207",
+      "sha256": "5385be9420e6a70547d6bcfd0b13d60f9c0738877645afa277d09550a96b8445",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "21770/727",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "72.700000",
+        "nb_frames": "2177"
+      },
+      "origin_group_id": "open_group_33_Х-4_Х-47",
+      "duplicates": [
+        "Х-47"
+      ]
+    },
+    {
+      "filename": "Х-40.mov",
+      "stem": "Х-40",
+      "size_bytes": 5172149,
+      "md5": "612cf89dc4e7213143242bc409949ded",
+      "sha256": "6a81739ced0efdcd4a4feb76ea16562a20ceb53a2232a801528716c450366c9f",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "11325/379",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "25.266667",
+        "nb_frames": "755"
+      },
+      "origin_group_id": "open_group_34_Х-40",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-43.mov",
+      "stem": "Х-43",
+      "size_bytes": 4791532,
+      "md5": "d14976d777c2ecddbfd6f31f2359f4e0",
+      "sha256": "39e28d7be01cdb090ede1881ce3ef704fa413271deb69d6735c1953f340d6069",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "20970/701",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "23.366667",
+        "nb_frames": "699"
+      },
+      "origin_group_id": "open_group_35_Х-43",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-44.mov",
+      "stem": "Х-44",
+      "size_bytes": 4198196,
+      "md5": "c41b35b2ac643cf436b0f6d548d5c163",
+      "sha256": "9774ed882153af3ba1a7e71c9b9249619e2b3a97ae336aad6143369802ca3522",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "18360/613",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "20.433333",
+        "nb_frames": "612"
+      },
+      "origin_group_id": "open_group_36_Х-44",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-45.mov",
+      "stem": "Х-45",
+      "size_bytes": 6789506,
+      "md5": "3ba888f705c81cad73bc45ece2077ff4",
+      "sha256": "524bf9ff2d5e81211dbbeff73129dbb5f3a5e5e35a64f443f53e16b1c2d471c7",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "747/25",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "33.333021",
+        "nb_frames": "996"
+      },
+      "origin_group_id": "open_group_37_Х-45",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-46.mov",
+      "stem": "Х-46",
+      "size_bytes": 3890084,
+      "md5": "e27b34f262cc51c90b44deda61422f56",
+      "sha256": "66fc5d28c2371592f9260305589bdc86636fdd2ebe7a7ec976eec00a23d43df4",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "8580/287",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "19.133021",
+        "nb_frames": "572"
+      },
+      "origin_group_id": "open_group_38_Х-46",
+      "duplicates": []
+    },
+    {
+      "filename": "Х-47.mov",
+      "stem": "Х-47",
+      "size_bytes": 14707558,
+      "md5": "fdd5aa51aefe4b42dd4d318bbbd3f207",
+      "sha256": "5385be9420e6a70547d6bcfd0b13d60f9c0738877645afa277d09550a96b8445",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "21770/727",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "72.700000",
+        "nb_frames": "2177"
+      },
+      "origin_group_id": "open_group_33_Х-4_Х-47",
+      "duplicates": [
+        "Х-4"
+      ]
+    },
+    {
+      "filename": "Х-48.mov",
+      "stem": "Х-48",
+      "size_bytes": 14448055,
+      "md5": "304e8be8155a1f6529fe86ba88d05668",
+      "sha256": "1f5840bff58f298e89c4afa00cb1c18f6dafc5c4096c251d9b507604ebefe906",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "10725/358",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "71.600000",
+        "nb_frames": "2145"
+      },
+      "origin_group_id": "open_group_39_Х-48_Х-5",
+      "duplicates": [
+        "Х-5"
+      ]
+    },
+    {
+      "filename": "Х-5.mov",
+      "stem": "Х-5",
+      "size_bytes": 14448055,
+      "md5": "304e8be8155a1f6529fe86ba88d05668",
+      "sha256": "1f5840bff58f298e89c4afa00cb1c18f6dafc5c4096c251d9b507604ebefe906",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "10725/358",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "71.600000",
+        "nb_frames": "2145"
+      },
+      "origin_group_id": "open_group_39_Х-48_Х-5",
+      "duplicates": [
+        "Х-48"
+      ]
+    },
+    {
+      "filename": "Х-8.mov",
+      "stem": "Х-8",
+      "size_bytes": 7714270,
+      "md5": "dacb4cf5da210be8550081264ca31317",
+      "sha256": "6a53e10acdcf52396ad5b1697eead32d8322c0911d792523a5c33fe5b388f4e7",
+      "stream_info": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "34200/1141",
+        "time_base": "1/19200",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration": "38.033021",
+        "nb_frames": "1140"
+      },
+      "origin_group_id": "open_group_40_Х-8",
+      "duplicates": []
+    }
+  ]
+}

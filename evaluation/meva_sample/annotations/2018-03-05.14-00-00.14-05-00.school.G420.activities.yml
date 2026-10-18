@@ -1,0 +1,2 @@
+- {'act': {'act2': {'person_enters_scene_through_structure': 1.0}, 'actors': [{'id1': 2, 'timespan': [{'tsr0': [4227, 4303]}]}], 'id2': 1, 'src_status': 'good', 'timespan': [{'tsr0': [4227, 4303]}]}}
+- {'act': {'act2': {'person_opens_facility_door': 1.0}, 'actors': [{'id1': 1, 'timespan': [{'tsr0': [4183, 4254]}]}], 'id2': 0, 'src_status': 'good', 'timespan': [{'tsr0': [4183, 4254]}]}}

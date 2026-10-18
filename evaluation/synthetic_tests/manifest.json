@@ -1,0 +1,54 @@
+{
+  "synthetic_tests": [
+    {
+      "test_id": "AT-01",
+      "filename": "monotone_valid.mov",
+      "path": "evaluation/synthetic_tests/monotone_valid.mov",
+      "sha256": "6fdf9819be59473c0324bee52ed8e5dcf7c4d2577466c2ae5c7453a33284b85b",
+      "description": "Корректно декодируемое однотонное серое видео (6.0с) без людей и объектов.",
+      "expected_status": "done",
+      "expected_verdict": "no_violation",
+      "probed": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_time": 0.0,
+        "duration": 6.0,
+        "nb_frames": 180,
+        "size_bytes": 8211
+      }
+    },
+    {
+      "test_id": "AT-08",
+      "filename": "vfr_offset_test.mov",
+      "path": "evaluation/synthetic_tests/vfr_offset_test.mov",
+      "sha256": "14a2ab0e3bcae67f05da6176913298088ba4efade05ed350b9d5602d1374367a",
+      "description": "Видео с переменной частотой кадров (VFR: 15fps на 0..5с, 30fps после 5с) и смещением start_time=3.5с.",
+      "expected_status": "done",
+      "probed": {
+        "codec_name": "h264",
+        "width": 464,
+        "height": 848,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1775/72",
+        "time_base": "1/15360",
+        "start_time": 3.5,
+        "duration": 14.3333,
+        "nb_frames": 355,
+        "size_bytes": 642802
+      }
+    },
+    {
+      "test_id": "AT-14",
+      "filename": "corrupted_invalid.mov",
+      "path": "evaluation/synthetic_tests/corrupted_invalid.mov",
+      "sha256": "fd427633fd0bf483ea1aaca784af10e23693ea686a8bd53348fb0fd0c205e9db",
+      "description": "Технически повреждённый контейнер без декодируемого видеопотока.",
+      "expected_status": "failed",
+      "expected_verdict": null
+    }
+  ]
+}

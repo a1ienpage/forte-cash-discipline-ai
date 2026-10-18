@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ForteBank AI — Контроль кассовой дисциплины (Datathon'26)</title>
+  <style>
+    :root {
+      --forte-primary: #9d0b48;
+      --forte-primary-dark: #740633;
+      --forte-accent: #e11d68;
+      --bg-page: #0f1117;
+      --bg-card: #171b24;
+      --bg-card-alt: #1f2430;
+      --border-subtle: #2b3242;
+      --text-main: #f3f5f8;
+      --text-muted: #9aa4b8;
+      --ok-bg: rgba(16, 185, 129, 0.14);
+      --ok-border: #10b981;
+      --ok-text: #34d399;
+      --warn-bg: rgba(244, 63, 94, 0.15);
+      --warn-border: #f43f5e;
+      --warn-text: #fb7185;
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #1b0b16 0%, #151922 65%, #171b24 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--forte-accent), var(--forte-primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(225, 29, 104, 0.35);
+    }
+
+    .brand-title h1 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-title p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .header-badges {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill strong {
+      color: var(--text-main);
+    }
+
+    .dot-local {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      max-width: 1400px;
+      margin: 20px auto 0;
+      padding: 0 24px;
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .tab-btn {
+      background: transparent;
+      color: var(--text-muted);
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+    }
+
+    .tab-btn.active {
+      color: #fff;
+      border-bottom-color: var(--forte-accent);
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 22px 24px 60px;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .workspace-grid {
+      display: grid;
+      grid-template-columns: 410px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .workspace-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Upload Zone */
+    .upload-dropzone {
+      border: 2px dashed #3b4459;
+      border-radius: 10px;
+      padding: 26px 16px;
+      text-align: center;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.015);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .upload-dropzone:hover,
+    .upload-dropzone.dragover {
+      border-color: var(--forte-accent);
+      background: rgba(225, 29, 104, 0.06);
+    }
+
+    .upload-dropzone h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .upload-dropzone p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .form-row {
+      margin-top: 14px;
+    }
+
+    .form-row label {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    select,
+    input[type="text"] {
+      width: 100%;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      padding: 9px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      margin-top: 14px;
+      background: linear-gradient(135deg, var(--forte-accent), var(--forte-primary));
+      color: #fff;
+      border: none;
+      padding: 11px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.92;
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-secondary {
+      background: var(--bg-card-alt);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+      padding: 7px 12px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--forte-accent);
+    }
+
+    /* Verdict Banner */
+    .verdict-banner {
+      padding: 18px 20px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .verdict-banner.no-violation {
+      background: var(--ok-bg);
+      border: 1px solid var(--ok-border);
+    }
+
+    .verdict-banner.violation {
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+    }
+
+    .verdict-title {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .verdict-banner.no-violation .verdict-title {
+      color: var(--ok-text);
+    }
+
+    .verdict-banner.violation .verdict-title {
+      color: var(--warn-text);
+    }
+
+    .verdict-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Violation Card */
+    .violation-item {
+      background: var(--bg-card-alt);
+      border: 1px solid #3a2330;
+      border-left: 4px solid var(--forte-accent);
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .violation-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .violation-type {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .timecode-btn {
+      background: var(--forte-primary);
+      color: #fff;
+      border: 1px solid var(--forte-accent);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .timecode-btn:hover {
+      background: var(--forte-accent);
+    }
+
+    .violation-desc {
+      font-size: 14px;
+      color: #e2e8f0;
+      margin-bottom: 12px;
+    }
+
+    .reg-box {
+      background: rgba(15, 17, 23, 0.65);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      font-size: 13px;
+    }
+
+    .reg-box strong {
+      color: #fda4af;
+    }
+
+    .reg-box a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    .reg-box a:hover {
+      text-decoration: underline;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .evidence-card {
+      background: #10131a;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: zoom-in;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+
+    .evidence-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--forte-accent);
+    }
+
+    .evidence-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .evidence-caption {
+      padding: 6px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Video player container */
+    .video-box {
+      background: #090b10;
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      max-height: 460px;
+    }
+
+    .video-box video {
+      max-height: 450px;
+      width: auto;
+      max-width: 100%;
+    }
+
+    pre.json-viewer {
+      background: #0b0d12;
+      border: 1px solid var(--border-subtle);
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #a7f3d0;
+      overflow-x: auto;
+      max-height: 360px;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 16px;
+    }
+
+    .catalog-card {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .catalog-card h4 {
+      color: #fda4af;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .catalog-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    /* Modal Dialog with Modern Web Guidance best practices */
+    dialog#evidenceDialog {
+      margin: auto;
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 0;
+      max-width: min(92vw, 720px);
+      max-height: 90vh;
+    }
+
+    dialog:modal {
+      overscroll-behavior: contain;
+    }
+
+    dialog::backdrop {
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(3px);
+      overflow: hidden;
+      overscroll-behavior: contain;
+    }
+
+    .dialog-inner {
+      padding: 16px;
+    }
+
+    .dialog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .dialog-inner img {
+      max-width: 100%;
+      max-height: 76vh;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
+    .status-loader {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid #3b82f6;
+      border-radius: 8px;
+      color: #93c5fd;
+      font-size: 13px;
+      margin-bottom: 16px;
+      width: 100%;
+    }
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid #93c5fd;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-logo">F</div>
+      <div class="brand-title">
+        <h1>ForteBank Cash Discipline AI</h1>
+        <p>Автоматизированный видеоконтроль кассовых операций и комплаенса НБРК (Datathon'26)</p>
+      </div>
+    </div>
+    <div class="header-badges">
+      <span class="pill"><span class="dot-local"></span> <strong>100% Local AI</strong> (Apple Silicon M4 MLX + YOLOv11)</span>
+      <span class="pill">НПА РК: <strong>Постановления НБРК № 231 и № 14</strong></span>
+      <span class="pill">Лицензия моделей: <strong id="headerApiKey">Apache-2.0 (Open Source)</strong></span>
+    </div>
+  </header>
+
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="switchTab('audit')">Проверка видеозаписи</button>
+    <button class="tab-btn" onclick="switchTab('catalog')">Нормативная база РК и справочник нарушений (19 типов)</button>
+    <button class="tab-btn" onclick="switchTab('api')">API для жюри и документация</button>
+  </nav>
+
+  <main>
+    <!-- TAB 1: AUDIT -->
+    <section id="tab-audit" class="tab-panel active">
+      <div class="workspace-grid">
+        <!-- Left Column: Controls & Video Player -->
+        <div>
+          <div class="card">
+            <div class="card-title">
+              <span>1. Загрузка видеофайла (.mov)</span>
+            </div>
+
+            <div id="dropzone" class="upload-dropzone" onclick="document.getElementById('fileInput').click()">
+              <input type="file" id="fileInput" accept=".mov,.mp4,.m4v,video/quicktime,video/mp4" style="display:none" onchange="handleFileSelect(this.files)" />
+              <h3>Перетащите .mov / .mp4 файл сюда или нажмите для выбора</h3>
+              <p id="selectedFileLabel">Поддерживаемые форматы: .mov, .mp4, .m4v (проверенный стек PyAV + HTML5 Video)</p>
+            </div>
+
+            <div class="form-row">
+              <label for="vlmModeSelect">Вычислительная политика локальной 7B-модели (Qwen2.5-VL-7B-Instruct-4bit, Apache-2.0):</label>
+              <select id="vlmModeSelect">
+                <option value="auto" selected>Auto Adaptive (автовыбор fast/deep по длительности и числу гипотез)</option>
+                <option value="fast">Fast Mode (Qwen2.5-VL-7B-Instruct-4bit: 6 обзорных кадров + 1 окно уточнения)</option>
+                <option value="deep">Deep Mode (Qwen2.5-VL-7B-Instruct-4bit: 9 обзорных кадров + до 10 окон обзора)</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="apiKeyInput">Ключ доступа API (заголовок X-API-Key):</label>
+              <input type="text" id="apiKeyInput" value="" placeholder="Введите X-API-Key (FORTE_API_KEY)" onchange="onApiKeyChanged()" />
+            </div>
+
+            <button id="analyzeBtn" class="btn-primary" onclick="uploadAndAnalyze()">Запустить AI-проверку видео</button>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              <span>Быстрый выбор из датасета open/videos (42 ролика)</span>
+            </div>
+            <div class="form-row" style="margin-top:0">
+              <label for="sampleSelect">Выберите ролик для демонстрации:</label>
+              <select id="sampleSelect"></select>
+            </div>
+            <button class="btn-secondary" style="width:100%; margin-top:10px; padding:10px;" onclick="runSampleAnalysis()">
+              Проверить выбранный ролик из датасета
+            </button>
+          </div>
+
+          <div class="card" id="playerCard" style="display:none;">
+            <div class="card-title">
+              <span>Видеозапись (защищённый Blob URL) и навигация по PTS-таймкодам</span>
+              <span id="videoMetaBadge" class="pill"></span>
+            </div>
+            <div class="video-box">
+              <video id="videoPlayer" controls playsinline></video>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Analysis Results -->
+        <div>
+          <div id="statusBox" style="display:none;" class="status-loader">
+            <div class="spinner"></div>
+            <span id="statusText">Обработка видео локальными моделями...</span>
+          </div>
+
+          <div id="emptyStateCard" class="card" style="text-align:center; padding:56px 24px;">
+            <h3 style="font-size:18px; margin-bottom:8px;">Готов к проверке видеозаписи кассы</h3>
+            <p style="color:var(--text-muted); max-width:520px; margin:0 auto; font-size:14px;">
+              Загрузите файл <code>.mov</code> / <code>.mp4</code> или выберите ролик датасета слева.
+              Сервис выполнит декодирование по временной шкале <code>PTS * time_base</code>, двухпроходную проверку
+              <code>Qwen2.5-VL-7B-Instruct-4bit</code> и сопоставление с Постановлениями Правления НБРК № 231 и № 14.
+            </p>
+          </div>
+
+          <div id="resultContainer" style="display:none;">
+            <div id="verdictBanner" class="verdict-banner">
+              <div>
+                <div id="verdictTitle" class="verdict-title"></div>
+                <div id="verdictSubtitle" class="verdict-sub"></div>
+              </div>
+              <div id="jobBadge" class="pill"></div>
+            </div>
+
+            <div id="violationsList"></div>
+            <div id="diagnosticsBox"></div>
+
+            <div class="card">
+              <div class="card-title">
+                <span>JSON-ответ API (GET /api/v1/jobs/{job_id})</span>
+                <div style="display:flex; gap:8px;">
+                  <button class="btn-secondary" onclick="copyJsonResult()">Скопировать полный JSON</button>
+                  <button class="btn-secondary" onclick="downloadJsonResult()">Скачать полный JSON</button>
+                </div>
+              </div>
+              <pre id="jsonOutput" class="json-viewer"></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: CATALOG & REGULATIONS -->
+    <section id="tab-catalog" class="tab-panel">
+      <div class="card">
+        <div class="card-title"><span>Нормативные правовые акты Республики Казахстан (НБРК, adilet.zan.kz)</span></div>
+        <div id="regulationsList" style="display:grid; gap:12px;"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span>Проверенный нормативный справочник правил (enabled / disabled со статусом аудита)</span></div>
+        <div id="catalogGrid" class="catalog-grid"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span>Перечень ограничений решения и известных граничных случаев (Раздел 8 и 10 ТЗ)</span></div>
+        <ul id="limitationsList" style="padding-left:20px; color:var(--text-muted); font-size:14px; display:grid; gap:8px;"></ul>
+      </div>
+    </section>
+
+    <!-- TAB 3: JURY API -->
+    <section id="tab-api" class="tab-panel">
+      <div class="card">
+        <div class="card-title"><span>Спецификация публичного API для автоматической проверки жюри (Раздел 12 ТЗ)</span></div>
+        <p style="font-size:14px; color:var(--text-muted); margin-bottom:14px;">
+          Сервис реализует двухшаговый асинхронный протокол проверки с авторизацией по заголовку <code>X-API-Key</code>.
+        </p>
+        <pre class="json-viewer" style="color:#f8fafc;"># Шаг 1. Отправка видео .mov на анализ
+curl -X POST http://localhost:8000/api/v1/analyze \
+     -H "X-API-Key: &lt;YOUR_FORTE_API_KEY&gt;" \
+     -F "file=@open/videos/Х-17.mov"
+
+# Ответ:
+{"job_id": "3f2a9c1e90", "status": "processing", "internal_state": "queued"}
+
+# Шаг 2. Получение статуса и результата
+curl -X GET http://localhost:8000/api/v1/jobs/3f2a9c1e90 \
+     -H "X-API-Key: &lt;YOUR_FORTE_API_KEY&gt;"</pre>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Dialog for Evidence Frames -->
+  <dialog id="evidenceDialog" closedby="any" aria-labelledby="dialogTitle">
+    <div class="dialog-inner">
+      <div class="dialog-header">
+        <strong id="dialogTitle">Кадр-доказательство</strong>
+        <form method="dialog">
+          <button type="submit" class="btn-secondary">Закрыть (Esc)</button>
+        </form>
+      </div>
+      <img id="dialogImg" src="" alt="Кадр-доказательство нарушения" />
+    </div>
+  </dialog>
+
+  <script>
+    let selectedFile = null;
+    let lastJobJson = null;
+    let lastFullJobJson = null;
+    let currentVideoBlobUrl = null;
+
+    const evidenceDialog = document.getElementById('evidenceDialog');
+    if (!('closedBy' in HTMLDialogElement.prototype)) {
+      evidenceDialog.addEventListener('click', (event) => {
+        if (event.target !== evidenceDialog) return;
+        const rect = evidenceDialog.getBoundingClientRect();
+        const isDialogContent = (
+          rect.top <= event.clientY &&
+          event.clientY <= rect.top + rect.height &&
+          rect.left <= event.clientX &&
+          event.clientX <= rect.left + rect.width
+        );
+        if (isDialogContent) return;
+        evidenceDialog.close();
+      });
+    }
+
+    function openEvidenceModal(b64, ts, title) {
+      document.getElementById('dialogTitle').textContent = `${title} — PTS-таймкод: ${ts} сек`;
+      document.getElementById('dialogImg').src = `data:image/jpeg;base64,${b64}`;
+      evidenceDialog.showModal();
+    }
+
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab-btn').forEach((btn, idx) => {
+        const map = ['audit', 'catalog', 'api'];
+        btn.classList.toggle('active', map[idx] === tabName);
+      });
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById(`tab-${tabName}`).classList.add('active');
+    }
+
+    const dropzone = document.getElementById('dropzone');
+    dropzone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropzone.classList.add('dragover');
+    });
+    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('dragover');
+      if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+        handleFileSelect(e.dataTransfer.files);
+      }
+    });
+
+    function handleFileSelect(files) {
+      if (!files || !files.length) return;
+      selectedFile = files[0];
+      const mb = (selectedFile.size / (1024 * 1024)).toFixed(1);
+      const labelEl = document.getElementById('selectedFileLabel');
+      labelEl.textContent = 'Выбран файл: ';
+      const strongEl = document.createElement('strong');
+      strongEl.style.color = '#fff';
+      strongEl.textContent = selectedFile.name;
+      labelEl.appendChild(strongEl);
+      labelEl.appendChild(document.createTextNode(` (${mb} МБ)`));
+    }
+
+    function escapeHtml(str) {
+      return String(str == null ? '' : str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    async function loadProtectedVideoBlob(videoUrl, apiKey) {
+      const playerCard = document.getElementById('playerCard');
+      const video = document.getElementById('videoPlayer');
+      if (currentVideoBlobUrl) {
+        URL.revokeObjectURL(currentVideoBlobUrl);
+        currentVideoBlobUrl = null;
+      }
+      video.removeAttribute('src');
+      const res = await fetch(videoUrl, {
+        headers: { 'X-API-Key': apiKey }
+      });
+      if (!res.ok) {
+        throw new Error(`Ошибка загрузки видеопотока: HTTP ${res.status}`);
+      }
+      const blob = await res.blob();
+      currentVideoBlobUrl = URL.createObjectURL(blob);
+      video.src = currentVideoBlobUrl;
+      playerCard.style.display = 'block';
+    }
+
+    function onApiKeyChanged() {
+      const k = document.getElementById('apiKeyInput').value.trim();
+      if (k) {
+        sessionStorage.setItem('forte_api_key', k);
+      }
+      loadInitialData();
+    }
+
+    async function loadInitialData() {
+      try {
+        const inputEl = document.getElementById('apiKeyInput');
+        if (!inputEl.value.trim() && sessionStorage.getItem('forte_api_key')) {
+          inputEl.value = sessionStorage.getItem('forte_api_key');
+        }
+        const apiKey = inputEl.value.trim();
+        const [catRes, dsRes] = await Promise.all([
+          fetch('/api/v1/catalog'),
+          apiKey ? fetch('/api/v1/dataset', { headers: { 'X-API-Key': apiKey } }) : Promise.resolve({ ok: false })
+        ]);
+        if (catRes.ok) {
+          const cat = await catRes.json();
+          const regList = document.getElementById('regulationsList');
+          regList.innerHTML = (cat.regulations || []).map(r => `
+            <div class="reg-box" style="margin-bottom:0">
+              <div><strong>${escapeHtml(r.title)}</strong></div>
+              <div style="color:var(--text-muted); margin-top:4px;">${escapeHtml(r.scope)}</div>
+              <div style="margin-top:6px;"><a href="${escapeHtml(r.url)}" target="_blank" rel="noopener">Открыть в ИПС «Әділет» (${escapeHtml(r.url)}) ↗</a></div>
+            </div>
+          `).join('');
+
+          const grid = document.getElementById('catalogGrid');
+          grid.innerHTML = (cat.violation_types || []).map(v => {
+            const badge = v.enabled
+              ? '<span class="pill" style="border-color:#15803d;color:#86efac;">ENABLED (Публичная норма НБРК)</span>'
+              : '<span class="pill" style="border-color:#b45309;color:#fcd34d;">DISABLED (Диагностика / Внутренний СОП)</span>';
+            const disNote = (!v.enabled && v.disabled_reason)
+              ? `<div style="font-size:12px; color:#fcd34d; margin-top:6px;"><strong>Причина отключения:</strong> ${escapeHtml(v.disabled_reason)}</div>`
+              : '';
+            return `
+              <div class="catalog-card">
+                <div style="margin-bottom:6px;">${badge}</div>
+                <h4>${escapeHtml(v.type)}</h4>
+                <p>${escapeHtml(v.rule_summary)}</p>
+                <div style="font-size:12px; color:#93c5fd;"><strong>Код:</strong> <code>${escapeHtml(v.code)}</code> • <strong>Норматив:</strong> ${escapeHtml(v.regulation_clause)}</div>
+                ${disNote}
+              </div>
+            `;
+          }).join('');
+
+          const lim = document.getElementById('limitationsList');
+          lim.innerHTML = (cat.limitations || []).map(l => `<li>${escapeHtml(l)}</li>`).join('');
+        }
+
+        if (dsRes.ok) {
+          const ds = await dsRes.json();
+          const sel = document.getElementById('sampleSelect');
+          sel.innerHTML = '';
+          (ds.videos || []).forEach(v => {
+            const opt = document.createElement('option');
+            opt.value = v.id || v.filename;
+            const durStr = v.duration_sec ? ` (${v.duration_sec} сек)` : '';
+            opt.textContent = `${v.filename}${durStr}`;
+            sel.appendChild(opt);
+          });
+        }
+      } catch (e) {
+        console.error('Error loading initial catalog/dataset:', e);
+      }
+    }
+
+    async function uploadAndAnalyze() {
+      if (!selectedFile) {
+        alert('Пожалуйста, сначала выберите видеофайл (.mov, .mp4, .m4v) или используйте выбор из датасета ниже.');
+        return;
+      }
+      const apiKey = document.getElementById('apiKeyInput').value.trim();
+      const mode = document.getElementById('vlmModeSelect').value;
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+      formData.append('mode', mode);
+
+      await submitAnalysisRequest('/api/v1/analyze', formData, apiKey);
+    }
+
+    async function runSampleAnalysis() {
+      const videoId = document.getElementById('sampleSelect').value;
+      if (!videoId) return;
+      const apiKey = document.getElementById('apiKeyInput').value.trim();
+      const mode = document.getElementById('vlmModeSelect').value;
+      const formData = new FormData();
+      formData.append('video_id', videoId);
+      formData.append('mode', mode);
+
+      await submitAnalysisRequest('/api/v1/analyze-sample', formData, apiKey);
+    }
+
+    async function submitAnalysisRequest(url, formData, apiKey) {
+      document.getElementById('emptyStateCard').style.display = 'none';
+      document.getElementById('resultContainer').style.display = 'none';
+      const statusBox = document.getElementById('statusBox');
+      const statusText = document.getElementById('statusText');
+      statusBox.style.display = 'inline-flex';
+      statusText.textContent = 'Отправка видео в локальный сервис...';
+
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'X-API-Key': apiKey },
+          body: formData
+        });
+        if (!res.ok) {
+          let errMsg = `HTTP ${res.status}`;
+          try {
+            const err = await res.json();
+            errMsg = err.detail || errMsg;
+          } catch (_) {}
+          throw new Error(errMsg);
+        }
+        const data = await res.json();
+        const jobId = data.job_id;
+        statusText.textContent = `Задача ${jobId} принята в очередь (status: processing). Выполняется анализ...`;
+        await pollJobStatus(jobId, apiKey);
+      } catch (err) {
+        statusBox.style.display = 'none';
+        document.getElementById('emptyStateCard').style.display = 'block';
+        alert(`Ошибка анализа: ${err.message}`);
+      }
+    }
+
+    async function pollJobStatus(jobId, apiKey) {
+      const statusBox = document.getElementById('statusBox');
+      const statusText = document.getElementById('statusText');
+      const startTime = Date.now();
+
+      while (true) {
+        await new Promise(r => setTimeout(r, 600));
+        const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+        const res = await fetch(`/api/v1/jobs/${jobId}`, {
+          headers: { 'X-API-Key': apiKey }
+        });
+
+        if (!res.ok) {
+          statusBox.style.display = 'none';
+          document.getElementById('emptyStateCard').style.display = 'block';
+          let errMsg = `HTTP ${res.status}`;
+          try {
+            const err = await res.json();
+            errMsg = err.detail || errMsg;
+          } catch (_) {}
+          alert(`Ошибка получения статуса задачи: ${errMsg}`);
+          return;
+        }
+
+        const job = await res.json();
+
+        if (job.status === 'processing') {
+          statusText.textContent = `Анализ видео (job_id: ${jobId}, state: ${job.internal_state || 'running'})... Прошло ${elapsed} сек`;
+          continue;
+        }
+
+        statusBox.style.display = 'none';
+        if (job.status === 'failed' || job.status !== 'done' || !job.verdict) {
+          document.getElementById('emptyStateCard').style.display = 'block';
+          alert(`Задача завершилась ошибкой (status=failed): ${job.error || 'Некорректный статус ответа сервера'}`);
+          return;
+        }
+
+        await renderJobResult(job, apiKey);
+        break;
+      }
+    }
+
+    function seekVideo(sec) {
+      const video = document.getElementById('videoPlayer');
+      if (video) {
+        video.currentTime = Math.max(0, sec);
+        video.play().catch(() => {});
+      }
+    }
+
+    async function renderJobResult(job, apiKey) {
+      // Полный JSON с необрезанными base64 JPEG кадрами и метаданными для экспорта
+      lastFullJobJson = JSON.parse(JSON.stringify(job));
+
+      // Компактное отображение для экрана (без изменения данных экспорта!)
+      lastJobJson = {
+        job_id: job.job_id,
+        status: job.status,
+        verdict: job.verdict,
+        violations: (job.violations || []).map(v => ({
+          code: v.code,
+          type: v.type,
+          timecode_sec: v.timecode_sec,
+          description: v.description,
+          evidence_frames: (v.evidence_frames || []).map(f => ({
+            frame_id: f.frame_id,
+            pts: f.pts,
+            timestamp_sec: f.timestamp_sec,
+            image_base64: f.image_base64.slice(0, 48) + '... [полный base64 сохраняется при копировании/скачивании JSON]'
+          }))
+        })),
+        meta: job.meta || {}
+      };
+
+      if (job.video_url) {
+        try {
+          await loadProtectedVideoBlob(job.video_url, apiKey);
+          const meta = job.meta || {};
+          document.getElementById('videoMetaBadge').textContent =
+            `${meta.filename || ''} • ${meta.duration_sec || '?'} сек • VLM вызовов: ${meta.vlm_calls ?? '?'} • ${meta.processing_time_sec || '?'} сек`;
+        } catch (vErr) {
+          console.error(vErr);
+        }
+      }
+
+      const container = document.getElementById('resultContainer');
+      container.style.display = 'block';
+
+      const banner = document.getElementById('verdictBanner');
+      const vTitle = document.getElementById('verdictTitle');
+      const vSub = document.getElementById('verdictSubtitle');
+      const jobBadgeEl = document.getElementById('jobBadge');
+      jobBadgeEl.textContent = `Job ID: ${job.job_id}`;
+
+      const diagInfo = (job.meta && job.meta.diagnostics) || {};
+      if (job.verdict === 'violation') {
+        banner.className = 'verdict-banner violation';
+        vTitle.textContent = '⚠️ Обнаружены визуально подтверждённые нарушения';
+        vSub.textContent = `Подтверждено событий: ${(job.violations || []).length} • Статус API: verdict = "violation"`;
+      } else if (diagInfo.analysis_incomplete) {
+        banner.className = 'verdict-banner violation';
+        vTitle.textContent = '⚠️ Анализ покрытия видео неполный (analysis_incomplete = true)';
+        vSub.textContent = `${diagInfo.incomplete_reason || 'Часть обзорных окон VLM не была обработана'} • На проверенном участке нарушений не обнаружено`;
+      } else {
+        banner.className = 'verdict-banner no-violation';
+        vTitle.textContent = '✅ Визуально подтверждённых нарушений не обнаружено';
+        vSub.textContent = 'Статус API: verdict = "no_violation" (ограничения видимости и диагностические наблюдения см. ниже)';
+      }
+
+      const listEl = document.getElementById('violationsList');
+      listEl.innerHTML = '';
+
+      (job.violations || []).forEach((v, idx) => {
+        const reg = v.regulation || {};
+        const framesHtml = (v.evidence_frames || []).map((f, fIdx) => `
+          <div class="evidence-card" onclick="openEvidenceModal('${escapeHtml(f.image_base64)}', ${Number(f.timestamp_sec) || 0}, 'Нарушение #${idx + 1} (${escapeHtml(f.frame_id || '')})')">
+            <img src="data:image/jpeg;base64,${escapeHtml(f.image_base64)}" alt="Evidence at ${Number(f.timestamp_sec) || 0}s" />
+            <div class="evidence-caption">
+              <span>Фаза ${fIdx + 1} (${escapeHtml(f.frame_id || 'frame')})</span>
+              <strong style="color:#fff">${Number(f.timestamp_sec) || 0} сек</strong>
+            </div>
+          </div>
+        `).join('');
+
+        const item = document.createElement('div');
+        item.className = 'violation-item';
+        const safeUrl = escapeHtml(reg.url || 'https://adilet.zan.kz/rus/docs/V1900019680');
+        item.innerHTML = `
+          <div class="violation-header">
+            <div class="violation-type">${idx + 1}. ${escapeHtml(v.type)}</div>
+            <button class="timecode-btn" onclick="seekVideo(${Number(v.timecode_sec) || 0})">
+              ▶ Таймкод: ${Number(v.timecode_sec) || 0} сек
+            </button>
+          </div>
+          <div class="violation-desc">${escapeHtml(v.description)}</div>
+          <div class="reg-box">
+            <div><strong>Код правила:</strong> <code>${escapeHtml(v.code || reg.code || '')}</code></div>
+            <div style="margin-top:3px;"><strong>Нормативный источник РК:</strong> ${escapeHtml(reg.document || '')}</div>
+            <div style="margin-top:3px;"><strong>Раздел / Пункт:</strong> ${escapeHtml(reg.clause || '')}</div>
+            <div style="margin-top:4px;"><a href="${safeUrl}" target="_blank" rel="noopener">Открыть текст НПА на adilet.zan.kz ↗</a></div>
+          </div>
+          <div style="font-size:12px; font-weight:700; color:var(--text-muted); text-transform:uppercase;">
+            Кадры-доказательства (${(v.evidence_frames || []).length} шт., реальные декодированные фазы):
+          </div>
+          <div class="evidence-grid">${framesHtml}</div>
+        `;
+        listEl.appendChild(item);
+      });
+
+      const diagBox = document.getElementById('diagnosticsBox');
+      diagBox.innerHTML = '';
+      const diag = (job.meta && job.meta.diagnostics) || {};
+      const diagObs = diag.diagnostic_observations || [];
+      if (diagObs.length > 0) {
+        const dCard = document.createElement('div');
+        dCard.className = 'card';
+        dCard.innerHTML = `
+          <div class="card-title"><span>Диагностические наблюдения (внутренние СОП / отключённые правила, не влияющие на публичный вердикт)</span></div>
+          ${diagObs.map(d => `
+            <div class="reg-box">
+              <div><strong>Код:</strong> <code>${escapeHtml(d.code)}</code> • <strong>Таймкод:</strong> ${Number(d.timecode_sec) || 0} сек</div>
+              <div style="margin-top:4px;">${escapeHtml(d.observed_facts)}</div>
+              <div style="margin-top:4px; color:#fcd34d;"><strong>Основание:</strong> ${escapeHtml(d.reason_not_violation)}</div>
+            </div>
+          `).join('')}
+        `;
+        diagBox.appendChild(dCard);
+      }
+
+      document.getElementById('jsonOutput').textContent = JSON.stringify(lastJobJson, null, 2);
+
+      if (job.violations && job.violations.length > 0) {
+        setTimeout(() => seekVideo(job.violations[0].timecode_sec), 300);
+      }
+    }
+
+    function copyJsonResult() {
+      if (!lastFullJobJson) return;
+      navigator.clipboard.writeText(JSON.stringify(lastFullJobJson, null, 2));
+    }
+
+    function downloadJsonResult() {
+      if (!lastFullJobJson) return;
+      const blob = new Blob([JSON.stringify(lastFullJobJson, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `job_${lastFullJobJson.job_id || 'result'}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    loadInitialData();
+  </script>
+</body>
+</html>

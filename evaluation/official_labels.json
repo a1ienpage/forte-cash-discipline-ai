@@ -1,0 +1,259 @@
+{
+  "source_file": "open/open_labels.xlsx",
+  "description": "Официальная разметка открытого набора от организаторов дататона. Содержит только бинарный вердикт и таймкод без категорий нарушений и нормативных ссылок.",
+  "total_entries": 42,
+  "items": {
+    "X-1": {
+      "stem": "X-1",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "22 секунда",
+      "official_timecode_sec": 22.0
+    },
+    "X-2": {
+      "stem": "X-2",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "10 секунда",
+      "official_timecode_sec": 10.0
+    },
+    "Х-3": {
+      "stem": "Х-3",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-4": {
+      "stem": "Х-4",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "57 секунда",
+      "official_timecode_sec": 57.0
+    },
+    "Х-5": {
+      "stem": "Х-5",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-8": {
+      "stem": "Х-8",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-10": {
+      "stem": "Х-10",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-11": {
+      "stem": "Х-11",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "18 секунда",
+      "official_timecode_sec": 18.0
+    },
+    "Х-12": {
+      "stem": "Х-12",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-13": {
+      "stem": "Х-13",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "47 секунда",
+      "official_timecode_sec": 47.0
+    },
+    "Х-14": {
+      "stem": "Х-14",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-15": {
+      "stem": "Х-15",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "15 секунда",
+      "official_timecode_sec": 15.0
+    },
+    "Х-16": {
+      "stem": "Х-16",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-17": {
+      "stem": "Х-17",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "7 секунда",
+      "official_timecode_sec": 7.0
+    },
+    "Х-18": {
+      "stem": "Х-18",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "20 секунда",
+      "official_timecode_sec": 20.0
+    },
+    "Х-19": {
+      "stem": "Х-19",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-20": {
+      "stem": "Х-20",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "5 секунда",
+      "official_timecode_sec": 5.0
+    },
+    "Х-21": {
+      "stem": "Х-21",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-22": {
+      "stem": "Х-22",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "14 секунда",
+      "official_timecode_sec": 14.0
+    },
+    "Х-23": {
+      "stem": "Х-23",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-24": {
+      "stem": "Х-24",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "8 секунда",
+      "official_timecode_sec": 8.0
+    },
+    "Х-25": {
+      "stem": "Х-25",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-26": {
+      "stem": "Х-26",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "9 секунда",
+      "official_timecode_sec": 9.0
+    },
+    "Х-27": {
+      "stem": "Х-27",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-28": {
+      "stem": "Х-28",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "7 секунда",
+      "official_timecode_sec": 7.0
+    },
+    "Х-29": {
+      "stem": "Х-29",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-30": {
+      "stem": "Х-30",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "13 секунда",
+      "official_timecode_sec": 13.0
+    },
+    "Х-31": {
+      "stem": "Х-31",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-32": {
+      "stem": "Х-32",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "5 секунда",
+      "official_timecode_sec": 5.0
+    },
+    "Х-33": {
+      "stem": "Х-33",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "6 секунда",
+      "official_timecode_sec": 6.0
+    },
+    "Х-34": {
+      "stem": "Х-34",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "13 секунда",
+      "official_timecode_sec": 13.0
+    },
+    "Х-35": {
+      "stem": "Х-35",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-37": {
+      "stem": "Х-37",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-38": {
+      "stem": "Х-38",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "33 секунда",
+      "official_timecode_sec": 33.0
+    },
+    "Х-39": {
+      "stem": "Х-39",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-40": {
+      "stem": "Х-40",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "17 секунда",
+      "official_timecode_sec": 17.0
+    },
+    "Х-43": {
+      "stem": "Х-43",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-44": {
+      "stem": "Х-44",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "16 секунда",
+      "official_timecode_sec": 16.0
+    },
+    "Х-45": {
+      "stem": "Х-45",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    },
+    "Х-46": {
+      "stem": "Х-46",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "11 секунда",
+      "official_timecode_sec": 11.0
+    },
+    "Х-47": {
+      "stem": "Х-47",
+      "official_verdict": "violation",
+      "official_timestamp_raw": "1минута 8 секунда",
+      "official_timecode_sec": 68.0
+    },
+    "Х-48": {
+      "stem": "Х-48",
+      "official_verdict": "no_violation",
+      "official_timestamp_raw": null,
+      "official_timecode_sec": null
+    }
+  }
+}
