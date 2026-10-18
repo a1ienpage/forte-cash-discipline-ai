@@ -1,0 +1,27 @@
+# Secrets and runtime data
+.env
+.env.*
+!.env.example
+.forte_api_key
+jobs_data/
+*.log
+# Models and private video data
+*.pt
+*.pth
+*.safetensors
+*.gguf
+*.mov
+*.MOV
+*.mp4
+*.m4v
+open/videos/
+evaluation/meva_sample/videos/
+evaluation/meva_sample/clips/
+evaluation/augmentations/videos/
+# Local environment
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
